@@ -3,10 +3,18 @@ let app = express();
 const { countAmountOfEachCharacter } = require('./countAmountOfEachCharacter/script.js');
 //const splitScrip = require('./splitOddAndEven/script.js');
 const { splitOddAndEven } = require('./splitOddAndEven/script.js');
-const { number } = require('./Taschenrechner/script.js');
+const { calculator } = require('./public/script.js');
 
+let bodyParser = require('body-parser');
 
 app.use(express.static(__dirname +'/public'));
+
+
+app.use(bodyParser());
+
+app.post('/', function(req, res) {
+	resp.end(JSON.stringify(req.body));
+});
 
 
 app.get('/', function(req, res) {
@@ -34,10 +42,9 @@ const result = splitOddAndEven(req.query.input ? req.query.input : '');
 
 app.get('/Taschenrechner', function(req, res) {
 console.log(req.params, req.query)
-const result = number(req.query.input ? req.query.input : '');
+const result = calculator(req.query.input ? req.query.input : '');
   res.sendFile(__dirname + "/Taschenrechner/index.html");
 });
-
 
 app.listen(3000, function() {
   console.log('server ist auch da');

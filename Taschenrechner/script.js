@@ -99,16 +99,14 @@ function operationpro(value){
 	document.getElementById("anzeige").value = pro / 100;
 }
 
-function operationhoch(){
+function calculator(){
 	let z = document.getElementById("anzeige").value;
 	document.getElementById("anzeige").value = z * z;
 }
-
+function calculator(x){console.log('hey');
+}
 module.exports ={
-		number,
-		operationhoch,
-		operationpro,
-		operationc,
-		operation
+
+		calculator
 		 };
 //nicht als erstes --- 0. geht nicht
