@@ -35,12 +35,6 @@ app.get('/countAmountOfEachCharacter', function(req, res) {
 	const result = countAmountOfEachCharacter(req.query.input ? req.query.input : '');
   res.sendFile(__dirname + "/countAmountOfEachCharacter/index.html");
 });
-/*
-app.get('/splitOddAndEven', function(req, res) {
-	console.log(req.params, req.query)
-	const result = splitScrip(req.query.input ? req.query.input : '');
-  res.sendFile(__dirname + "/splitOddAndEven/index.html");
-});*/
 
 app.get('/splitOddAndEven', function(req, res) {
 	console.log(req.params, req.query)
@@ -52,6 +46,14 @@ app.get('/Taschenrechner', function(req, res) {
 	console.log(req.params, req.query)
   res.sendFile(__dirname + "/Taschenrechner/index.html");
 });
+
+/*
+app.get('/splitOddAndEven', function(req, res) {
+	console.log(req.params, req.query)
+	const result = splitScrip(req.query.input ? req.query.input : '');
+  res.sendFile(__dirname + "/splitOddAndEven/index.html");
+});*/
+
 
 app.listen(3000, function() {
   console.log('server ist auch da');
