@@ -3,9 +3,6 @@ const app = express();
 const path = require('path');
 const bodyParser = require('body-parser');
 
-
-
-
 const { countAmountOfEachCharacter } = require('./countAmountOfEachCharacter/script.js');
 const { splitOddAndEven } = require('./splitOddAndEven/script.js');
 //const splitScrip = require('./splitOddAndEven/script.js');

@@ -30,12 +30,14 @@ img{
      float:left;
      line-height:12vh;
      cursor:pointer;
-     background-color:#009EFA;
+     background-color:#f2f2f2;
+     color:#009EFA;
      font-size:5vh;
      border: 3px #009EFA;
-     color:white;
  		 max-height:100px;
     }
+    
+
     
 .smallButton{
 		 width:10%;
@@ -46,7 +48,6 @@ img{
      background-color:#009EFA;
      font-size:5vh;
      border: 3px #009EFA;
-     color:white;
  		 max-height:100px;
     }
     
@@ -74,15 +75,6 @@ footer{
 			 background-color:black;
 			 display: flex;
 			}
-
-
-
-
-
-
-
-
-
 
 .button1{
      width:25%;
@@ -115,3 +107,9 @@ footer{
 	  line-height:30vh;
 	  font-size:9vh;
 	 }
+	 
+.container{
+			 	    margin:auto;
+			 	    max-width:1000px;
+			 	    padding-right:100px; 
+ 	       }
