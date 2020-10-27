@@ -3,17 +3,18 @@ html
   head
     link(rel='stylesheet', href='./style.css')
     link(rel='icon', sizes='16x16 32x32 48x48 64x64', href='./Icons/logo.png')
-    title Hauptseite Aufgaben
+    title splitOddAndEven
   body
     header
-      a(href='https:/bezahl.de')
+      a(href='http://localhost:3000/')
         img(src='./Icons/bezahl.deLogo.svg')
-    h1 Errungenschaften
-    a(class='button' href='http://localhost:3000/Taschenrechner') Taschenrechner
-    a(class='button' href='http://localhost:3000/countAmountOfEachCharacter') countAmountOfEachCharacter
-    a(class='button' href='http://localhost:3000/splitOddAndEven') splitOddAndEven
-    a(class='button' href='http://localhost:3000/removeExclamationMarksFromEnd') removeExclamationMarksFromEnd
-      
+    h1 splitOddAndEven
+      form(action='/splitOddAndEven/ergebnis'  methode='post' class=col-2)
+        label(for='input') Nummer:
+          input(id='input' name='input' type='number'  min='1' max='99999')
+        label(for='input') Nummer:
+          input(id='input' name='input' type='number'  min='1' max='99999')
+          input(type='submit' value='Submit')         
     footer
       div(class='container')
         span NX Technologies GmbH - 

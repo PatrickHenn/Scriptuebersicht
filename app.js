@@ -26,11 +26,22 @@ app.post('/splitOddAndEven/ergebnis', function(req, res) {
 });
 
 */
-app.get('/test', function (req, res) {
-  res.render('index', { test: 'Hey', message: 'Hello there!'});
+app.get('/', function (req, res) {
+  res.render('index.pug');
 });
 
-app.get('/', function(req, res) {
+app.get('/splitOddAndEven', function (req, res) {
+	const result = splitOddAndEven(req.query.input ? req.query.input : '');
+  res.render('splitOddAndEven/splitOddAndEven_index.pug');
+});
+
+app.get('/countAmountOfEachCharacter', function (req, res) {
+	const result = splitOddAndEven(req.query.input ? req.query.input : '');
+  res.render('countAmountOfEachCharacter/countAmountOfEachCharacter_index.pug');
+});
+
+/*
+app.get('/test', function(req, res) {
 console.log(req.params, req.query)
   res.sendFile(__dirname + "/index.html");
 });
@@ -44,14 +55,14 @@ app.get('/countAmountOfEachCharacter', function(req, res) {
 app.get('/splitOddAndEven', function(req, res) {
 	console.log(req.params, req.query)
 	const result = splitOddAndEven(req.query.input ? req.query.input : '');
-  res.sendFile(__dirname + "/splitOddAndEven/index.html");
+  res.sendFile(__dirname + "/splitOddAndEven/index.pug");
 });
 
 app.get('/Taschenrechner', function(req, res) {
 	console.log(req.params, req.query)
   res.sendFile(__dirname + "/Taschenrechner/index.html");
 });
-
+*/
 //start server
 app.listen(3000, function() {
   console.log('server ist auch da');

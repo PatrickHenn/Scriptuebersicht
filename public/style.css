@@ -37,7 +37,9 @@ img{
  		 max-height:100px;
     }
     
-
+.white{
+       color:white;
+      }
     
 .smallButton{
 		 width:10%;
@@ -62,7 +64,7 @@ form{
 		}
 		
 label{
-		 	color:white;
+		 	color:f2f2f2;
 		 }
 
 footer{

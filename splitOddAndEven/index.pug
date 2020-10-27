@@ -8,13 +8,17 @@ html
     header
       a(href='https:/bezahl.de')
         img(src='./Icons/bezahl.deLogo.svg')
-    h1 Errungenschaften
-    a(class='button' href='http://localhost:3000/Taschenrechner') Taschenrechner
-    a(class='button' href='http://localhost:3000/countAmountOfEachCharacter') countAmountOfEachCharacter
-    a(class='button' href='http://localhost:3000/splitOddAndEven') splitOddAndEven
-    a(class='button' href='http://localhost:3000/removeExclamationMarksFromEnd') removeExclamationMarksFromEnd
-      
+    h1 splitOddAndEven
+    div (class='alles')
+		  form(action='/splitOddAndEven/ergebnis'  methode='post' class=col-2)
+				label(for='input')Nummer:
+				  input(id='input' name='input' type='number'  min='1' max='99999')
+				label(for='input')Nummer:
+				  input(id='input' name='input' type='number'  min='1' max='99999')
+					input(type='submit' value='Submit')
+
     footer
+      a(class='button' href="http://localhost:3000/") Zurück zur Hautseite
       div(class='container')
         span NX Technologies GmbH - 
         span Friesenplatz 4 - 
