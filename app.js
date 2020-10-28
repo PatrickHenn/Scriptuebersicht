@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 
 const { countAmountOfEachCharacter } = require('./countAmountOfEachCharacter/script.js');
 const { splitOddAndEven } = require('./splitOddAndEven/script.js');
+const { removeExclamationMarksFromEnd } = require('./removeExclamationMarksFromEnd/script.js');
 //const splitScrip = require('./splitOddAndEven/script.js');
 
 app.use(express.static(__dirname +'/public'));
@@ -40,6 +41,14 @@ app.get('/countAmountOfEachCharacter', function (req, res) {
 
 app.get('/Taschenrechner', function (req, res) {
   res.render('Taschenrechner/Taschenrechner_index.pug');
+});
+
+app.get('/removeExclamationMarksFromEnd', function (req, res) {
+  res.render('removeExclamationMarksFromEnd/removeExclamationMarksFromEnd_index.pug');
+});
+
+app.get('/ergebnis', function (req, res) {
+  res.render('ergebnis/ergebnis_index.pug');
 });
 
 /*
