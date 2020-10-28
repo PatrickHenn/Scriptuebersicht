@@ -6,8 +6,6 @@ const bodyParser = require('body-parser');
 const { countAmountOfEachCharacter } = require('./countAmountOfEachCharacter/script.js');
 const { splitOddAndEven } = require('./splitOddAndEven/script.js');
 //const splitScrip = require('./splitOddAndEven/script.js');
-//const { calculator } = require('./public/script.js');
-
 
 app.use(express.static(__dirname +'/public'));
 app.use(bodyParser.urlencoded({extended: true}));
