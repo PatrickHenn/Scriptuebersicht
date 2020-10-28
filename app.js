@@ -31,24 +31,24 @@ app.get('/', function (req, res) {
 
 app.get('/splitOddAndEven', function (req, res) {
 	const result = splitOddAndEven(req.query.input ? req.query.input : '');
-  res.render('splitOddAndEven/splitOddAndEven_index.pug');
+  res.render('splitOddAndEven/index.pug');
 });
 
 app.get('/countAmountOfEachCharacter', function (req, res) {
 	const result = splitOddAndEven(req.query.input ? req.query.input : '');
-  res.render('countAmountOfEachCharacter/countAmountOfEachCharacter_index.pug');
+  res.render('countAmountOfEachCharacter/index.pug');
 });
 
 app.get('/Taschenrechner', function (req, res) {
-  res.render('Taschenrechner/Taschenrechner_index.pug');
+  res.render('taschenrechner/index.pug');
 });
 
 app.get('/removeExclamationMarksFromEnd', function (req, res) {
-  res.render('removeExclamationMarksFromEnd/removeExclamationMarksFromEnd_index.pug');
+  res.render('removeExclamationMarksFromEnd/index.pug');
 });
 
 app.get('/ergebnis', function (req, res) {
-  res.render('ergebnis/ergebnis_index.pug');
+  res.render('ergebnis/index.pug');
 });
 
 /*
