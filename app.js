@@ -43,10 +43,6 @@ app.get('/Taschenrechner', function (req, res) {
 });
 
 /*
-app.get('/test', function(req, res) {
-console.log(req.params, req.query)
-  res.sendFile(__dirname + "/index.html");
-});
 
 app.get('/countAmountOfEachCharacter', function(req, res) {
 	console.log(req.params, req.query)
@@ -60,10 +56,6 @@ app.get('/splitOddAndEven', function(req, res) {
   res.sendFile(__dirname + "/splitOddAndEven/index.pug");
 });
 
-app.get('/Taschenrechner', function(req, res) {
-	console.log(req.params, req.query)
-  res.sendFile(__dirname + "/Taschenrechner/index.html");
-});
 */
 //start server
 app.listen(3000, function() {
