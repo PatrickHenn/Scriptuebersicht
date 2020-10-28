@@ -40,6 +40,10 @@ app.get('/countAmountOfEachCharacter', function (req, res) {
   res.render('countAmountOfEachCharacter/countAmountOfEachCharacter_index.pug');
 });
 
+app.get('/Taschenrechner', function (req, res) {
+  res.render('Taschenrechner/Taschenrechner_index.pug');
+});
+
 /*
 app.get('/test', function(req, res) {
 console.log(req.params, req.query)

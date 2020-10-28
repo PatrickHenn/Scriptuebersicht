@@ -1,0 +1,34 @@
+doctype html
+html
+  head
+    link(rel='stylesheet', href='./style.css')
+    link(rel='icon', sizes='16x16 32x32 48x48 64x64', href='./Icons/logo.png')
+    script src='script.js'
+    title Taschenrechner
+  body
+    header
+      a(href='http://localhost:3000/')
+        img(src='./Icons/bezahl.deLogo.svg')
+    input(id='anzeige' type='text' disabled)
+    div(id='tastatur')
+      button(class='button1' onclick='operation(value)' value='ce') CE
+      button(class='button1' onclick='operation(value)' value='0') C
+      button(class='button1' onclick='operationpro(value)') %
+      button(class='button1' onclick='operation(value)' value='+') +
+      button(class='button1' onclick='number(value)' value=7) 7
+      button(class='button1' onclick='number(value)' value=8) 8
+      button(class='button1' onclick='number(value)' value=9) 9
+      button(class='button1' onclick='operation(value)' value='-') -
+      button(class='button1' onclick='number(value)' value=4) 4
+      button(class='button1' onclick='number(value)' value=5) 5
+      button(class='button1' onclick='number(value)' value=6) 6
+      button(class='button1' onclick='operation(value)' value='*') *
+      button(class='button1' onclick='number(value)' value=1) 1
+      button(class='button1' onclick='number(value)' value=2) 2
+      button(class='button1' onclick='number(value)' value=3) 3
+      button(class='button1' onclick='operation(value)' value='/') :
+      button(class='button1' onclick='operationhoch(value)' value='²') x²
+      button(class='button1' onclick='number(value)' value=0) 0
+      button(class='button1' onclick='number(value)' value='.') .
+      button(class='button1' onclick='operation(value)' value='=') =
+    
