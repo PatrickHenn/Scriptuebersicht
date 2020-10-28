@@ -10,11 +10,11 @@ const { splitOddAndEven } = require('./splitOddAndEven/script.js');
 app.use(express.static(__dirname +'/public'));
 app.use(bodyParser.urlencoded({extended: true}));
 app.set('view engine', 'pug');
-/*
+
 
 app.post('/countAmountOfEachCharacter/ergebnis', function(req, res) {
 	console.log('es spricht buchstaben');
-//	pug.render('p Hello world!');
+	pug.render('p Hello world!');
 	res.end(JSON.stringify(req.body));
 });
 
@@ -23,7 +23,7 @@ app.post('/splitOddAndEven/ergebnis', function(req, res) {
 	res.end(JSON.stringify(req.body));
 });
 
-*/
+
 app.get('/', function (req, res) {
   res.render('index.pug');
 });
