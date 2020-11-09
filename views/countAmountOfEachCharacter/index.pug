@@ -5,9 +5,8 @@ html
     link(rel='icon', sizes='16x16 32x32 48x48 64x64', href='./Icons/logo.png')
     title countAmountOfEachCharacter
   body
-    header
-      a(href='http://localhost:3000/')
-        img(src='./Icons/bezahl.deLogo.svg')
+  include ./components/mixins.pug
+  +header
     h1 countAmountOfEachCharacter
       form(action='/ergebnis'  methode='post' class=col-2)
         label(for='input') Satz 1:
