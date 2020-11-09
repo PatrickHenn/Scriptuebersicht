@@ -26,7 +26,7 @@ app.post('/splitOddAndEven/ergebnis', function(req, res) {
 
 
 app.get('/', function (req, res) {
-  res.render('index.pug');
+  res.render('test.pug');
 });
 
 app.get('/splitOddAndEven', function (req, res) {
