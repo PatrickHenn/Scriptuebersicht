@@ -2,9 +2,9 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const bodyParser = require('body-parser');
-const { countAmountOfEachCharacter } = require('./countAmountOfEachCharacter/script.js');
-const { splitOddAndEven } = require('./splitOddAndEven/script.js');
-const { removeExclamationMarksFromEnd } = require('./removeExclamationMarksFromEnd/script.js');
+const { countAmountOfEachCharacter } = require('./scripts/countAmountOfEachCharacter/script.js');
+const { splitOddAndEven } = require('./scripts/splitOddAndEven/script.js');
+const { removeExclamationMarksFromEnd } = require('./scripts/removeExclamationMarksFromEnd/script.js');
 
 
 app.use(express.static(__dirname +'/public'));
@@ -36,7 +36,7 @@ app.get('/countAmountOfEachCharacter', function (req, res) {
   res.render('countAmountOfEachCharacter/index');
 });
 
-app.get('/Taschenrechner', function (req, res) {
+app.get('/taschenrechner', function (req, res) {
   res.render('taschenrechner/index');
 });
 
