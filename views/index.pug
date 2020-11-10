@@ -4,14 +4,14 @@ html
     link(rel='stylesheet', href='./style.css')
     link(rel='icon', sizes='16x16 32x32 48x48 64x64', href='./Icons/logo.png')
     title Hauptseite Aufgaben
-    include ./components/mixins.pug
+    include ./layout/layout
   body
     header
       a(href='https:/bezahl.de')
         img(src='./Icons/bezahl.deLogo.svg')
     h1 Errungenschaften
-    a(class='button' href='http://localhost:3000/Taschenrechner') Taschenrechner
-    a(class='button' href='http://localhost:3000/countAmountOfEachCharacter') countAmountOfEachCharacter
     a(class='button' href='http://localhost:3000/splitOddAndEven') splitOddAndEven
+    a(class='button' href='http://localhost:3000/countAmountOfEachCharacter') countAmountOfEachCharacter
     a(class='button' href='http://localhost:3000/removeExclamationMarksFromEnd') (removeExclamationMarksFromEnd) 
+    a(class='button' href='http://localhost:3000/Taschenrechner') Taschenrechner
     +footer
