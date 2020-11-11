@@ -2,7 +2,7 @@
 
 let string = "hello! world!";
 let newString = "";
-function removeExclamationMarksFromEnd(_string){
+function remove(_string){
   for (x=0;x<_string.length;x++){
     console.log(_string[x],x)
     if ( _string.length == x){}
@@ -16,7 +16,7 @@ function removeExclamationMarksFromEnd(_string){
 //const log = removeExclamationMarksFromEnd(string);
 //console.log(log,string,newString);
 
-module.exports ={ removeExclamationMarksFromEnd };
+module.exports ={ remove };
 /*
 ! am ende entfernen dafür muss man das ende herausfinden durch length -1 und dann if ==! doppelt loopen und entfernen
 

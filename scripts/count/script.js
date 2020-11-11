@@ -1,6 +1,6 @@
 //Buchstaben zählen
 
-function countAmountOfEachCharacter(_input) {		
+function count(_input) {		
 	console.log('start');
 	console.log({_input});
 	let obj = {};
@@ -23,4 +23,4 @@ function countAmountOfEachCharacter(_input) {
 	return tmp
 }
 
-module.exports ={countAmountOfEachCharacter,};
+module.exports ={count,};

@@ -1,6 +1,6 @@
 //Nummern in gerade und ungerade aufteilen
 
-function splitOddAndEven(input){
+function split(input){
 	let even = [];
 	let odd = [];
 	for (i=0; i<input.length; i++) {
@@ -15,4 +15,4 @@ function splitOddAndEven(input){
 	return {'even':even, 'odd':odd};
 	}
 
-module.exports ={ splitOddAndEven };
+module.exports ={ split };

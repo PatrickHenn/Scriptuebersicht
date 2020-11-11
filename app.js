@@ -2,9 +2,9 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const bodyParser = require('body-parser');
-const { countAmountOfEachCharacter } = require('./scripts/countAmountOfEachCharacter/script.js');
-const { splitOddAndEven } = require('./scripts/splitOddAndEven/script.js');
-const { removeExclamationMarksFromEnd } = require('./scripts/removeExclamationMarksFromEnd/script.js');
+const { count } = require('./scripts/count/script.js');
+const { split } = require('./scripts/split/script.js');
+const { remove } = require('./scripts/remove/script.js');
 
 
 app.use(express.static(__dirname +'/public'));
@@ -27,13 +27,13 @@ app.get('/', function (req, res) {
 });
 
 app.get('/splitOddAndEven', function (req, res) {
-	const result = splitOddAndEven(req.query.input ? req.query.input : '');
-  res.render('splitOddAndEven/index');
+	const result = split(req.query.input ? req.query.input : '');
+  res.render('split/index');
 });
 
 app.get('/countAmountOfEachCharacter', function (req, res) {
-	const result = splitOddAndEven(req.query.input ? req.query.input : '');
-  res.render('countAmountOfEachCharacter/index');
+	const result = count(req.query.input ? req.query.input : '');
+  res.render('count/index');
 });
 
 app.get('/taschenrechner', function (req, res) {
@@ -41,7 +41,8 @@ app.get('/taschenrechner', function (req, res) {
 });
 
 app.get('/removeExclamationMarksFromEnd', function (req, res) {
-  res.render('removeExclamationMarksFromEnd/index');
+	const result = remove(req.query.input ? req.query.input : '');
+  res.render('remove/index');
 });
 
 app.get('/ergebnis', function(req, res) {
