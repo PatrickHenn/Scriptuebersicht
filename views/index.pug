@@ -1,17 +1,11 @@
-doctype html
-html
-  head
-    link(rel='stylesheet', href='./style.css')
-    link(rel='icon', sizes='16x16 32x32 48x48 64x64', href='./icons/logo.png')
-    title Hauptseite Aufgaben
-    include ./layout/layout
-  body
-    header
-      a(href='https:/bezahl.de')
-        img(src='./icons/bezahl.deLogo.svg')
+extends component/layout
+
+
+block content
+    title Hauptseite 
     h1 Errungenschaften
     a(class='button' href='http://localhost:3000/splitOddAndEven') splitOddAndEven
     a(class='button' href='http://localhost:3000/countAmountOfEachCharacter') countAmountOfEachCharacter
     a(class='button' href='http://localhost:3000/removeExclamationMarksFromEnd') (removeExclamationMarksFromEnd) 
     a(class='button' href='http://localhost:3000/Taschenrechner') Taschenrechner
-    +footer
+

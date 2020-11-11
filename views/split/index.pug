@@ -1,13 +1,8 @@
-doctype html
-html
-  head
-    meta(charset='utf-8')
-    link(rel='stylesheet', href='./style.css')
-    link(rel='icon', sizes='16x16 32x32 48x48 64x64', href='./icons/logo.png')
-    title splitOddAndEven
-    include ../layout/layout.pug
-  body
-    +header
+extends ../component/layout
+
+
+block content
+    title splitOddAndEven 
     h1 splitOddAndEven
       form(action='/ergebnis'  methode='post' class=col-2)
         label(for='input') Nummer:
@@ -15,4 +10,3 @@ html
         label(for='input') Nummer:
           input(id='input' name='input' type='number'  min='1' max='99999')
           input(type='submit' value='Submit')         
-    +footer

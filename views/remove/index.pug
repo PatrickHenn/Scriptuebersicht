@@ -1,15 +1,10 @@
-doctype html
-html
-  head
-    link(rel='stylesheet', href='./style.css')
-    link(rel='icon', sizes='16x16 32x32 48x48 64x64', href='./icons/logo.png')
-    title removeExclamationMarksFromEnd
-    include ../layout/layout.pug
-  body
-    +header
+extends ../component/layout
+
+
+block content
+    title removeExclamationMarksFromEnd 
     h1 removeExclamationMarksFromEnd
       form(action='/ergebnis'  methode='post' class=col-2)
         label(for='input') Satz:
           input(id='input' name='input')
           input(type='submit' value='Submit')         
-    +footer
