@@ -13,7 +13,6 @@ function number(x) {
    document.getElementById("anzeige").value += x;
 }
 
-
 function operation(o){
 	 const input = document.getElementById("anzeige").value;
 	 console.log({sign,o,save,tmp,input})
@@ -82,9 +81,6 @@ function operation(o){
 	}
 }
 
-
-
-
 function operationc(){
 	let lang = document.getElementById("anzeige").value;
 	if (lang !== 0){
@@ -106,7 +102,6 @@ function calculator(){
 function calculator(x){console.log('hey');
 }
 module.exports ={
-
 		calculator
 		 };
 //nicht als erstes --- 0. geht nicht

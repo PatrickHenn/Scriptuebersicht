@@ -16,5 +16,5 @@ router1.get('/', function (req, res) {
 router1.get('/about', function (req, res) {
   res.send('die dann direkt auftauen')
 })
- 
+
 module.exports = router1
