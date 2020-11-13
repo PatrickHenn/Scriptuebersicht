@@ -22,9 +22,9 @@ app.post('/countAmountOfEachCharacter/ergebnis', function(req, res) {
 	res.end('ergebnis/index',{params:req.body});
 });
 
-app.post('/splitOddAndEven/ergebnis', function(req, res) {
-	console.log('zahlen');
-	res.end(JSON.stringify(req.body));
+app.post('/splitOddAndEven', function (req, res) {
+	const result = split(req.body.input ? req.body.input : '');
+  res.render('split/index',result);
 });
 
 app.get('/', function (req, res) {
