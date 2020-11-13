@@ -2,7 +2,9 @@ extends ../component/layout
 
 
 block content
+
     title Taschenrechner
+
     input(id='anzeige' type='text' disabled)
     div(id='tastatur')
       button(class='button1' onclick='operation(value)' value='ce') CE
@@ -25,4 +27,4 @@ block content
       button(class='button1' onclick='number(value)' value=0) 0
       button(class='button1' onclick='number(value)' value='.') .
       button(class='button1' onclick='operation(value)' value='=') =
-    
+block
