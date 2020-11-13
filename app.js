@@ -12,7 +12,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.set('view engine', 'pug');
 
 //router
-var router1 = require('./router1');
+var router1 = require('./router/router1');
 app.use('/api/', router1); 
 
 app.post('/countAmountOfEachCharacter/ergebnis', function(req, res) {
