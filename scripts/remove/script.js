@@ -1,20 +1,20 @@
 //Entfernt (noch alle) Ausrufezeichen
 
-let string = "hello! world!";
 let newString = "";
 function remove(_string){
   for (x=0;x<_string.length;x++){
     console.log(_string[x],x)
     if ( _string.length == x){}
-
     else{
     newString += string[x] 
     }
+    console.log('hooo',newString);
   }
+ return
 }
 
 //const log = removeExclamationMarksFromEnd(string);
-//console.log(log,string,newString);
+
 
 module.exports ={ remove };
 /*

@@ -4,7 +4,11 @@ extends ../component/layout
 block content
     title removeExclamationMarksFromEnd 
     h1 removeExclamationMarksFromEnd
-      form(action='/ergebnis'  methode='post' class=col-2)
+      form(method='post' class=col-2)
         label(for='input') Satz:
           input(id='input' name='input')
-          input(type='submit' value='Submit')         
+          input(type='submit' value='Submit')
+        br 
+        br
+        a Ergebnis:
+          pre= JSON.stringify(newString)       

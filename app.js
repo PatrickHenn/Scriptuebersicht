@@ -16,15 +16,19 @@ var router1 = require('./router/router1');
 
 app.use('/api/', router1); 
 
-app.post('/countAmountOfEachCharacter/ergebnis', function(req, res) {
-	console.log('buch');
-	pug.render('Hello world!');
-	res.end('ergebnis/index',{params:req.body});
+app.post('/countAmountOfEachCharacter', function (req, res) {
+	const result = count(req.body.input ? req.body.input : '');
+  res.render('count/index',result);
 });
 
 app.post('/splitOddAndEven', function (req, res) {
 	const result = split(req.body.input ? req.body.input : '');
   res.render('split/index',result);
+});
+
+app.post('/removeExclamationMarksFromEnd', function (req, res) {
+	const result = remove(req.body.input ? req.body.input : '');
+  res.render('remove/index',result);
 });
 
 app.get('/', function (req, res) {
