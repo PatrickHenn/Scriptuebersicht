@@ -63,10 +63,7 @@ img{
 .bold{
       font-weight: bold;   
      }
-
-.platz{
-       whitespace: pre-wrap
-      }
+     
 form{
  		 width:50%;	
 		 font-size:20px;
@@ -81,6 +78,9 @@ label{
 input{
       padding:8px;      
       }
+pre{
+    font-size:25px;
+    }
 
 footer{
 			 color:#ffffff;
@@ -117,7 +117,7 @@ span{
     }
 
 p{
-	font-size:30px;
+	font-size:25px;
   }
     
 #tastatur{
