@@ -1,22 +1,26 @@
 //Entfernt (noch alle) Ausrufezeichen
 
-let newString = "";
+
 function remove(_string){
+  let newString = "";
   for (x=0;x<_string.length;x++){
     console.log(_string[x],x)
     if ( _string.length == x){}
     else{
-    newString += string[x] 
+    newString += _string[x]
+   console.log('hooo',newString); 
     }
     console.log('hooo',newString);
   }
- return
+ return newString
 }
+/*let _string ="dasdsa!"
+const log = remove(_string);
 
-//const log = removeExclamationMarksFromEnd(string);
-
+    console.log('log',log);
 
 module.exports ={ remove };
+*/
 /*
 ! am ende entfernen dafür muss man das ende herausfinden durch length -1 und dann if ==! doppelt loopen und entfernen
 
