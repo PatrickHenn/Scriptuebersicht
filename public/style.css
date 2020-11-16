@@ -60,6 +60,13 @@ img{
 	           background-color:#F23D65;
 	           }
 
+.bold{
+      font-weight: bold;   
+     }
+
+.platz{
+       whitespace: pre-wrap
+      }
 form{
  		 width:50%;	
 		 font-size:20px;
@@ -101,7 +108,8 @@ footer{
 .container{
 			 	    margin:auto;
 			 	    max-width:1000px;
-			 	    padding-right:100px; 
+			 	    padding-right:100px;
+			 	    text-align:center;
  	       }
     
 #tastatur{
