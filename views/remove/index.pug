@@ -3,10 +3,11 @@ block title
     title removeExclamationMarksFromEnd 
 
 block content
-    h1 removeExclamationMarksFromEnd
-      form(method='post' class=col-2)
+  h1 removeExclamationMarksFromEnd
+    form(method='post')
+      div(class='col-1')
         label(for='input') Satz:
           input(id='input' name='input')
           input(type='submit' value='Submit')
-      p Ergebnis:
-        pre= JSON.stringify(newString)       
+    p Ergebnis:
+      pre= JSON.stringify(newString)       

@@ -3,12 +3,13 @@ block title
     title countAmountOfEachCharacter
 
 block content
-    h1 countAmountOfEachCharacter
-      form(method='post' class=col-2)
+  h1 countAmountOfEachCharacter
+    form(method='post')
+      div(class='col-1')
         label(for='input') Satz-1:
           input(id='input' name='input')
         label(for='input') Satz-2:
           input(id='input' name='input')
           input(type='submit' value='Submit')     
-      p Ergebnis:
-        pre= JSON.stringify(safe)   
+    p Ergebnis:
+      pre= JSON.stringify(safe)   

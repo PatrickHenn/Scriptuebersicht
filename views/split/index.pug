@@ -4,12 +4,13 @@ block title
 
 block content
   h1 splitOddAndEven
-    form(method='post' class=col-2)
-      label(for='input') Nummern:
-        input(id='input' name='input' type='number'  min='1' max='99999')
-      label(for='input') 
-        input(id='input' name='input' type='number'  min='1' max='99999')
-        input(type='submit' value='Submit')     
+    form(method='post')
+      div(class='col-1')
+        label(for='input') Nummern:
+          input(id='input' name='input' type='number'  min='1' max='99999')
+        label(for='input')
+          input(id='input' name='input' type='number'  min='1' max='99999')
+          input(type='submit' value='Submit')     
     p Even:
       pre= JSON.stringify(even)    
     p Odd:
