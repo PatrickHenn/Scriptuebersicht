@@ -1,35 +1,27 @@
-extends ../component/layout
+extends ./component/layout
 block title
     title countAmountOfEachCharacter
-    script(type='text/javascript')
-        function addFields(){
-            // Number of inputs to create
-            var number = document.getElementById("member").value;
-            // Container <div> where dynamic content will be placed
-            var container = document.getElementById("container");
-
-                // Append a node with a random text
-                container.appendChild(document.createTextNode("Member " + (i+1)));
-                // Create an <input> element, set its type and name attributes
-                var input = document.createElement("input");
-                input.type = "text";
-                input.name = "member" + i;
-                container.appendChild(input);
-                // Append a line break 
-                container.appendChild(document.createElement("br"));
-            }
-        }
+    script.
+      function add() {
+        const mi = document.createElement("input");
+        mi.setAttribute('type', 'text');
+        mi.setAttribute('value', 'default');
+        mi.setAttribute('name', 'testinput');
+        const memb = document.getElementById("inputFields");
+        memb.appendChild(mi);
+        console.log(memb)
+      }
     
 block content
-
-    title Hauptseite Aufgaben
-    
-    h1 Errungenschaften
-    a(class='button' href='http://localhost:3000/Taschenrechner') Taschenrechner
-    a(class='button' href='http://localhost:3000/countAmountOfEachCharacter') countAmountOfEachCharacter
-    a(class='button' href='http://localhost:3000/splitOddAndEven') splitOddAndEven
-    a(class='button' href='http://localhost:3000/removeExclamationMarksFromEnd') (removeExclamationMarksFromEnd)
-    
-    input(type='text' id='member' name='member' value='') Number of members: (max. 10)
-    a(href='#' id='filldetails' onclick='addFields()') Fill Details
+    .container
+      title Hauptseite Aufgaben
+      
+      h1 Errungenschaften
+      a(class='button' href='http://localhost:3000/Taschenrechner') Taschenrechner
+      a(class='button' href='http://localhost:3000/countAmountOfEachCharacter') countAmountOfEachCharacter
+      a(class='button' href='http://localhost:3000/splitOddAndEven') splitOddAndEven
+      a(class='button' href='http://localhost:3000/removeExclamationMarksFromEnd') (removeExclamationMarksFromEnd)
+    #inputFields
+      input(type='text' id='member' name='member' value='')
+      a(href='#' id='filldetails' onclick='add()') Fill Details
     div(id='container')
