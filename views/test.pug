@@ -1,15 +1,35 @@
-doctype html
-html
-  head
-    link(rel='stylesheet', href='./style.css')
-    link(rel='icon', sizes='16x16 32x32 48x48 64x64', href='./Icons/logo.png')
+extends ../component/layout
+block title
+    title countAmountOfEachCharacter
+    script(type='text/javascript')
+        function addFields(){
+            // Number of inputs to create
+            var number = document.getElementById("member").value;
+            // Container <div> where dynamic content will be placed
+            var container = document.getElementById("container");
+
+                // Append a node with a random text
+                container.appendChild(document.createTextNode("Member " + (i+1)));
+                // Create an <input> element, set its type and name attributes
+                var input = document.createElement("input");
+                input.type = "text";
+                input.name = "member" + i;
+                container.appendChild(input);
+                // Append a line break 
+                container.appendChild(document.createElement("br"));
+            }
+        }
+    
+block content
+
     title Hauptseite Aufgaben
-    include ../layout/layout.pug
-  body
-    +header
+    
     h1 Errungenschaften
     a(class='button' href='http://localhost:3000/Taschenrechner') Taschenrechner
     a(class='button' href='http://localhost:3000/countAmountOfEachCharacter') countAmountOfEachCharacter
     a(class='button' href='http://localhost:3000/splitOddAndEven') splitOddAndEven
     a(class='button' href='http://localhost:3000/removeExclamationMarksFromEnd') (removeExclamationMarksFromEnd)
-    +footer
+    
+    input(type='text' id='member' name='member' value='') Number of members: (max. 10)
+    a(href='#' id='filldetails' onclick='addFields()') Fill Details
+    div(id='container')

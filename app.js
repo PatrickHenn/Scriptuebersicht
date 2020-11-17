@@ -16,6 +16,10 @@ var router1 = require('./router/router1');
 
 app.use('/api/', router1); 
 
+app.get('/test', function (req, res) {
+  res.render('test');
+});
+
 app.post('/countAmountOfEachCharacter', function (req, res) {
 	const result = count(req.body.input ? req.body.input : '');
   res.render('count/index',result);
