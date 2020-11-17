@@ -33,7 +33,6 @@ img{
          float:left;
          line-height:12vh;
          cursor:pointer;
-         background-color:#f2f2f2;
          color:#009EFA;
          font-size:5vh;
          border: 3px #009EFA;
@@ -107,8 +106,7 @@ footer{
 
 .container{
 			 	    margin:auto;
-			 	    max-width:1000px;
-			 	    padding-right:100px;
+			 	    max-width:100%;
 			 	    text-align:center;
  	       }
 
