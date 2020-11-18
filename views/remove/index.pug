@@ -1,13 +1,25 @@
 extends ../component/layout
 block title
     title removeExclamationMarksFromEnd 
-
+    script.
+      function add() {
+        const mi = document.createElement("input");
+        mi.setAttribute('type', 'text');
+        mi.setAttribute('value', '');
+        mi.setAttribute('name', 'input');
+        const memb = document.getElementById("inputFields");
+        memb.appendChild(mi);
+        console.log(memb)
+      }
+      
 block content
   h1 removeExclamationMarksFromEnd
     .col
-    form(method='post')
-      label(for='input') Satz:
-        input(id='input' name='input')
-        input(type='submit' value='Submit')
+      form(method='post')
+        label(for='input') Sätze:
+          #inputFields
+          input(type='text' id='input' name='input' value='')
+          a.btn(href='#' id='input' onclick='add()') Add Input
+          input.btn(type='submit' value='Submit') 
       p Ergebnis:
         pre= JSON.stringify(newString)       
