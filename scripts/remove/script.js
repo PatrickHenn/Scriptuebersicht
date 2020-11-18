@@ -4,20 +4,21 @@
 function remove(_string){
   let newString = "";
   for (x=0;x<_string.length;x++){
-    console.log(_string[x],x)
+//    console.log(_string[x],x)
     if (_string[x] == '!'){
       _string[x]=''
     } else{
     newString += _string[x]
-   console.log('hooo',newString); 
     }
   }
+//    console.log('ende',newString,'start',_string);  
  return newString
 }
-let _string ="dasdsa!"
+
+/*let _string ="es sieht heute! schön aus!"
 const log = remove(_string);
     console.log('log',log);
-
+*/
 module.exports ={ remove };
 
 /*
