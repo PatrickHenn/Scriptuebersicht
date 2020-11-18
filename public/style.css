@@ -84,7 +84,8 @@ pre{
 footer{
 			 color:#ffffff;
 			 width: 90%;
-			 position:absolute; 
+			 position:absolute;
+			 padding-top:10px; 
 			 bottom:0px;
 			 height: 15%;
 			 width:100%; 
