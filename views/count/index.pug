@@ -1,15 +1,25 @@
 extends ../component/layout
 block title
     title countAmountOfEachCharacter
-
+    script.
+      function add() {
+        const mi = document.createElement("input");
+        mi.setAttribute('type', 'text');
+        mi.setAttribute('value', '');
+        mi.setAttribute('name', 'input');
+        const memb = document.getElementById("inputFields");
+        memb.appendChild(mi);
+        console.log(memb)
+      }
+      
 block content
   h1 countAmountOfEachCharacter
     .col
       form(method='post')
-        label(for='input') Satz-1:
-          input(id='input' name='input')
-        label(for='input') Satz-2:
-          input(id='input' name='input')
+        label(for='input') Sätze:
+          #inputFields
+          input(type='text' id='input' name='input' value='')
+          a.btn(href='#' id='input' onclick='add()') Add Input
           input(type='submit' value='Submit')     
         p Ergebnis:
-          pre= JSON.stringify(safe)   
+          pre= JSON.stringify(safe)  
