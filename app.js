@@ -11,10 +11,6 @@ app.use(express.static(__dirname +'/public'));
 app.use(bodyParser.urlencoded({extended: true}));
 app.set('view engine', 'pug');
 
-//router
-var router1 = require('./router/router1');
-
-app.use('/api/', router1); 
 
 app.get('/test', function (req, res) {
   res.render('test');
