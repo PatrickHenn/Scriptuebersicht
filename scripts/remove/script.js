@@ -1,34 +1,13 @@
-//Entfernt (noch alle) Ausrufezeichen
+//Entfernt Ausrufezeichen
 
 
 function remove(_string){
-  let newString = "";
-  for (x=0;x<_string.length;x++){
-//    console.log(_string[x],x)
-    if (_string[x] == '!'){
-      _string[x]=''
-    } else{
-    newString += _string[x]
-    }
+  let newString = [];
+  while (_string[_string.length - 1] === "!") {
+    newString = _string.slice(0, -1);
+    _string = _string.slice(0, -1);
   }
-//    console.log('ende',newString,'start',_string);  
- return newString
+  console.log(newString)
+  return {'ohne !':newString }
 }
-
-/*let _string ="es sieht heute! schön aus!"
-const log = remove(_string);
-    console.log('log',log);
-*/
 module.exports ={ remove };
-
-/*
-! am ende entfernen dafür muss man das ende herausfinden durch length -1 und dann if ==! doppelt loopen und entfernen
-
-Write a function removeExclamationMarksFromEnd, that accepts one parameter: inputString, a valid string.
-
-The function should return a string. The string contains the inputString, but without an exclamation mark at the end.
-
-Input: a string.
-
-Output: a string that has no exclamation mark at the end.
-*/
