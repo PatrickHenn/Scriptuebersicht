@@ -28,7 +28,7 @@ app.post('/splitOddAndEven', function (req, res) {
 
 app.post('/removeExclamationMarksFromEnd', function (req, res) {
 	const result = remove(req.body.input ? req.body.input : '');
-  res.render('remove/index',result);
+  res.render('remove/index',{newString :result});
 });
 
 app.get('/', function (req, res) {
@@ -52,10 +52,6 @@ app.get('/taschenrechner', function (req, res) {
 app.get('/removeExclamationMarksFromEnd', function (req, res) {
 	const result = remove(req.query.input ? req.query.input : '');
   res.render('remove/index');
-});
-
-app.get('/ergebnis', function(req, res) {
-	res.render('ergebnis/index',{params: req.query});
 });
 
 app.listen(3000, function() {

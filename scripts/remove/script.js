@@ -7,7 +7,7 @@ function remove(_string){
     newString = _string.slice(0, -1);
     _string = _string.slice(0, -1);
   }
-  console.log(newString)
-  return {'ohne !':newString }
+  console.log(_string,'neu',newString)
+  return newString
 }
 module.exports ={ remove };
