@@ -1,0 +1,14 @@
+extends ../component/layout
+block title
+    title correctMistakes 
+      
+block content
+  h1 correctMistakes
+    .col
+      form(method='post')
+        label(for='input') Sätze:
+          #inputFields
+          input(type='text' id='input' name='input' value='')
+          input.btn(type='submit' value='Submit') 
+      p Ergebnis:
+        pre= JSON.stringify(newString)       
