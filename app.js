@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 const { count } = require('./scripts/count/script.js');
 const { split } = require('./scripts/split/script.js');
 const { remove } = require('./scripts/remove/script.js');
-const { correct } = require('./script/correct/script.js');
+const { correct } = require('./scripts/correct/script.js');
 
 
 app.use(express.static(__dirname +'/public'));
