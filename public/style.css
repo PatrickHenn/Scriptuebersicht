@@ -27,42 +27,6 @@ img{
     padding:1%; 
     }
      
-.button{
-		     width:100%;
-         text-align:center;
-         float:left;
-         line-height:12vh;
-         cursor:pointer;
-         color:#009EFA;
-         font-size:5vh;
-         border: 3px #009EFA;
-     		 max-height:100px;
-        }
-    
-.white{
-       color:white;
-      }
-    
-.smallButton{
-		         width:10%;
-             text-align:center;
-             float:left;
-             line-height:12vh;
-             cursor:pointer;
-             background-color:#009EFA;
-             font-size:5vh;
-             border: 3px #009EFA;
-         		 max-height:100px;
-            }
-    
-.button:hover{
-	           background-color:#F23D65;
-	           }
-
-.bold{
-      font-weight: bold;   
-     }
-     
 form{
  		 width:50%;	
 		 font-size:20px;
@@ -77,6 +41,7 @@ label{
 input{
       padding:8px;      
       }
+      
 pre{
     font-size:15px;
     }
@@ -93,6 +58,26 @@ footer{
 			 display: flex;
 			}
 
+span{
+     width:100%;
+    }
+
+p{
+	font-size:25px;
+  }
+  
+.button{
+		     width:100%;
+         text-align:center;
+         float:left;
+         line-height:12vh;
+         cursor:pointer;
+         color:#009EFA;
+         font-size:5vh;
+         border: 3px #009EFA;
+     		 max-height:100px;
+        }
+        
 .button1{
          width:25%;
          height:20%;
@@ -103,22 +88,38 @@ footer{
          color:#009EFA;
          font-size:5vh;
          border: 1px #009EFA
-        }
+        }    
+        
+.smallButton{
+		         width:10%;
+             text-align:center;
+             float:left;
+             line-height:12vh;
+             cursor:pointer;
+             background-color:#009EFA;
+             font-size:5vh;
+             border: 3px #009EFA;
+         		 max-height:100px;
+            }
+    
+.button:hover{
+	           background-color:#F23D65;
+	           }
 
+.white{
+       color:white;
+      }
+
+.bold{
+      font-weight: bold;   
+     }
+     
 .container{
 			 	    margin:auto;
 			 	    max-width:100%;
 			 	    text-align:center;
- 	       }
-
-span{
-     width:100%;
-    }
-
-p{
-	font-size:25px;
-  }
-    
+ 	       }     
+ 	           
 #tastatur{
 	        width:100%;
 	        height:60%;

@@ -1,4 +1,4 @@
-//Bestimmte Zahlen korrigieren
+//Bestimmte Zahlen korrigieren - correctMistake
 
 function correct (_string){
   console.log(_string);
