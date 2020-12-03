@@ -3,19 +3,19 @@
 function correct (_string){
   console.log(_string);
   for (i=0; i<_string.length; i++) {  
-    let newString = _string.replace(/[5]/g, 'S'); 
-  console.log(_string, newString);
-  return _string, newString
+    let _newString = _string.replace(/[5]/g, 'S').replace(/0/g, 'O').replace(/1/g, 'I'); 
+    console.log(_string, _newString);
+  return _newString
   }
 }
 module.exports ={ correct };
 
 //wieso geht es hier aber nicht auf dem localhost? 
-//-> ich nehme an die funktion wird nicht getriggert :(
-let log = correct("John 5mith");
-console.log('->',log);
 
+let log = correct("5sS");
+console.log('->',log);
 /*
+
 console.log(_string, newString);
 Character recognition software is widely used to digitize printed texts.
 When documents are digitized character recognition softwares often make mistakes.

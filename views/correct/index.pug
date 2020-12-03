@@ -3,7 +3,7 @@ block title
     title correctMistakes 
       
 block content
-  h1 correctMistakes (macht noch nichts)
+  h1 correctMistakes (nur in der Konsole)
     .col
       form(method='post')
         label(for='input') Sätze:
@@ -11,4 +11,4 @@ block content
           input(type='text' id='input' name='input' value='')
           input.btn(type='submit' value='Submit') 
       p Ergebnis:
-        pre= JSON.stringify(newString)       
+        pre= JSON.stringify(_newString)       
