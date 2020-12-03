@@ -29,7 +29,7 @@ app.post('/removeExclamationMarksFromEnd', function (req, res) {
 });
 
 app.post('/correctMistakes', function (req, res) {
-	const result = remove(req.body.input ? req.body.input : '');
+	const result = correct(req.body.input ? req.body.input : '');
   res.render('correct/index',{_newString :result});
 });
 
