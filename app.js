@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const bodyParser = require('body-parser');
+//const methodOverride = require('method-override');
 const { count } = require('./scripts/count/script.js');
 const { split } = require('./scripts/split/script.js');
 const { remove } = require('./scripts/remove/script.js');
@@ -25,12 +26,12 @@ app.post('/splitOddAndEven', function (req, res) {
 
 app.post('/removeExclamationMarksFromEnd', function (req, res) {
 	const result = remove(req.body.input ? req.body.input : '');
-  res.render('remove/index',{newString :result});
+  res.render('remove/index',{_string : result});
 });
 
 app.post('/correctMistakes', function (req, res) {
 	const result = correct(req.body.input ? req.body.input : '');
-  res.render('correct/index',{_newString :result});
+  res.render('correct/index',{_newString : result});
 });
 
 
@@ -66,6 +67,12 @@ app.get('/correctMistakes', function (req, res) {
   res.render('correct/index');
 });
 
+/*
+app.use(methodOverride());
+app.use(function(err, req, res, next) {
+  res.sendFile(__dirname + 'wartung/index.html');
+});
+*/
 
 app.listen(3000, function() {
   console.log('server ist auch da');
