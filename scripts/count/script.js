@@ -1,28 +1,27 @@
 //Buchstaben zählen
 
 function count(_input) {
-	console.log({_input});
-	let obj = {};
-	let tmp = [];
-	let safe = [];
-	for (i=0; i < _input.length; i++){
-		for (x=0; x < _input[i].length; x++){
-				console.log(i);
-			if (obj[_input[i][x]] == undefined){
-				obj[_input[i][x]] = 1;
-				console.log(_input[i][x]);
-			} else {
-						console.log(_input[i][x]);
-				obj[_input[i][x]] += 1;
-			}  
-		}
-		tmp[i] = obj;
-		console.log('hier',tmp[i]);
-		safe.push(tmp[i]);
-	  console.log('safe',safe);
-		obj = {};
+	let obj = {};			
+  if(typeof _input === 'string') {
+    for (let index = 0; index < _input.length; index++) {
+      if (obj[_input[index]] === undefined){
+	      obj[_input[index]] = 1;
+      } else {
+	      obj[_input[index]] += 1;
+      }  
+    }
+  } else {
+      for (i=0; i < _input.length; i++){
+        for (x=0; x < _input[i].length; x++){
+          if (obj[_input[i][x]] === undefined){
+	          obj[_input[i][x]] = 1;
+          } else {
+	          obj[_input[i][x]] += 1;
+          }  
+        }
+      }
+    }
+    return obj
 	}
-	return {tmp, safe}
-}
 
 module.exports ={count};

@@ -16,7 +16,7 @@ app.set('view engine', 'pug');
 
 app.post('/countAmountOfEachCharacter', function (req, res) {
 	const result = count(req.body.input ? req.body.input : '');
-  res.render('count/index',result);
+  res.render('count/index',{obj : result});
 });
 
 app.post('/splitOddAndEven', function (req, res) {
