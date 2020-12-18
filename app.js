@@ -67,6 +67,13 @@ app.get('/correctMistakes', function (req, res) {
   res.render('correct/index');
 });
 
+
+app.get('/countAmountOfEachCharacter', function(req, res) {
+console.log(req.params, req.query)
+  res.sendFile(__dirname + "./countAmountOfEachCharacter/index.html");
+});
+
+
 /*
 app.use(methodOverride());
 app.use(function(err, req, res, next) {
