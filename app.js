@@ -4,6 +4,7 @@ const path = require('path');
 const bodyParser = require('body-parser');
 require('dotenv').config();
 //const methodOverride = require('method-override');
+const request = require('request-promise-native');
 const { count } = require('./scripts/count/script.js');
 const { split } = require('./scripts/split/script.js');
 const { remove } = require('./scripts/remove/script.js');
@@ -82,8 +83,9 @@ app.get('/api', function (req, res) {
 });
 
 app.post('/api', function (req, res) {
+  console.log(req.body);
 	const result = createOrder(req.body ? req.body : '');
-  res.render('api/index',{createOrder : result});//<--
+  res.render('api/index',{createOrder});//<--
 });
 
 /*

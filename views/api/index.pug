@@ -14,4 +14,6 @@ block content
         input(name='price' type='number')
         input.btn(type='submit' value='Submit') 
       form(action='/api' method='get')
-        input.btn(type='submit' value='get order') 
+        input.btn(type='submit' value='get order')
+      p Antwort:
+        pre=JSON.stringify(data, false, 2)
