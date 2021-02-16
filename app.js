@@ -2,11 +2,14 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const bodyParser = require('body-parser');
+require('dotenv').config();
 //const methodOverride = require('method-override');
 const { count } = require('./scripts/count/script.js');
 const { split } = require('./scripts/split/script.js');
 const { remove } = require('./scripts/remove/script.js');
 const { correct } = require('./scripts/correct/script.js');
+const { createOrder } = require('./scripts/api/createOrder.js');
+const { getOrder } = require('./scripts/api/createOrder.js');
 
 
 app.use(express.static(__dirname +'/public'));
@@ -67,12 +70,21 @@ app.get('/correctMistakes', function (req, res) {
   res.render('correct/index');
 });
 
-
 app.get('/countAmountOfEachCharacter', function(req, res) {
 console.log(req.params, req.query)
-  res.sendFile(__dirname + "./countAmountOfEachCharacter/index.html");
+  res.sendFile(__dirname + "./countAmountOfEachCharacter/index");
 });
 
+app.get('/api', function (req, res) {
+  console.log(req.body);
+	const result = getOrder(req.query ? req.query : '');
+  res.render('api/index',{getOrder: result});
+});
+
+app.post('/api', function (req, res) {
+	const result = createOrder(req.body ? req.body : '');
+  res.render('api/index',{createOrder : result});//<--
+});
 
 /*
 app.use(methodOverride());

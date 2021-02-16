@@ -4,9 +4,9 @@
  }
 
 body{
- 		  background-color:#f2f2f2;
- 		  font-family: helvetica-w01-light,helvetica-w02-light,sans-serif;
-	 	 }
+	background-color:#f2f2f2;
+	font-family: helvetica-w01-light,helvetica-w02-light,sans-serif;
+	}
 	 	 
 header{
       height: 20%;
@@ -35,28 +35,28 @@ form{
 		}
 		
 label{
-		 	color:f2f2f2;
-		 }
+	color:f2f2f2;
+	}
 
 input{
-      padding:8px;      
-      }
+    padding:8px;      
+    }
       
 pre{
     font-size:15px;
     }
 
 footer{
-			 color:#ffffff;
-			 width: 90%;
-			 position:absolute;
-			 padding-top:10px; 
-			 bottom:0px;
-			 height: 15%;
-			 width:100%; 
-			 background-color:black;
-			 display: flex;
-			}
+	color:#ffffff;
+	width: 90%;
+	position:absolute;
+	padding-top:10px; 
+	bottom:0px;
+	height: 15%;
+	width:100%; 
+	background-color:black;
+	display: flex;
+	}
 
 span{
      width:100%;
@@ -67,15 +67,15 @@ p{
   }
   
 .button{
-		     width:100%;
-         text-align:center;
-         float:left;
-         line-height:12vh;
-         cursor:pointer;
-         color:#009EFA;
-         font-size:5vh;
-         border: 3px #009EFA;
-     		 max-height:100px;
+		width:100%;
+        text-align:center;
+        float:left;
+        line-height:12vh;
+        cursor:pointer;
+        color:#009EFA;
+        font-size:5vh;
+        border: 3px #009EFA;
+     	max-height:100px;
         }
         
 .button1{

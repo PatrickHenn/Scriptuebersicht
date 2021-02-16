@@ -1,0 +1,17 @@
+extends ../component/layout
+block title
+    title api 
+      
+block content
+  h1 api orderCreate
+    .col
+      form(action="/api" method='post')
+        label(for='name') Name + Preis:
+        //- #inputFields
+        input(name='name' type='text')
+        label(for='price')
+        //- #inputFields
+        input(name='price' type='number')
+        input.btn(type='submit' value='Submit') 
+      form(action='/api' method='get')
+        input.btn(type='submit' value='get order') 
