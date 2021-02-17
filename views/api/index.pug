@@ -8,11 +8,11 @@ block content
       form(action="/api" method='post')
         label(for='name') Name + Preis:
         //- #inputFields
-        input(name='name' type='text')
+        input(name='name' type='text' placeholder=lastName)
         label(for='price')
         //- #inputFields
-        input(name='price' type='number' placeholder=lastName)
-        input.btn(type='submit' value='Submit' placeholder=lastPrice) 
+        input(name='price' type='number' placeholder=lastPrice)
+        input.btn(type='submit' value='Submit') 
       form(action='/api' method='get')
         input.btn(type='submit' value='get')
         p Antwort:
@@ -23,7 +23,7 @@ block content
             th Price
             th Empfänger
           tr
-            th #{lastId}
+            th(href=`http://localhost:3000/api/`+`#{lastId}`) #{lastId} 
             td #{lastName}
             td #{lastPrice}
             td #{lastRecipient}
