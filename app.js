@@ -4,13 +4,12 @@ const path = require('path');
 const bodyParser = require('body-parser');
 require('dotenv').config();
 //const methodOverride = require('method-override');
-const request = require('request-promise-native');
-const { count } = require('./scripts/count/script.js');
-const { split } = require('./scripts/split/script.js');
-const { remove } = require('./scripts/remove/script.js');
-const { correct } = require('./scripts/correct/script.js');
-const { createOrder } = require('./scripts/api/createOrder.js');
-const { getOrder } = require('./scripts/api/createOrder.js');
+const { count } = require('./scripts/count.js');
+const { split } = require('./scripts/split.js');
+const { remove } = require('./scripts/remove.js');
+const { correct } = require('./scripts/correct.js');
+const { createOrder } = require('./scripts/createOrder.js');
+const { getOrder } = require('./scripts/createOrder.js');
 
 
 app.use(express.static(__dirname +'/public'));
@@ -76,16 +75,16 @@ console.log(req.params, req.query)
   res.sendFile(__dirname + "./countAmountOfEachCharacter/index");
 });
 
-app.get('/api', function (req, res) {
-  console.log(req.body);
-	const result = getOrder(req.query ? req.query : '');
-  res.render('api/index',{getOrder: result});
+app.get('/api',async function (req, res) {
+  console.log(req.body,'query:',req.query);
+	const result = await getOrder(req.query ? req.query : '');
+  res.render('api/index',{getOrder : result});
 });
 
-app.post('/api', function (req, res) {
+app.post('/api',async function (req, res) {
   console.log(req.body);
-	const result = createOrder(req.body ? req.body : '');
-  res.render('api/index',{createOrder});//<--
+	const result = await createOrder(req.body ? req.body : '');
+  res.render('api/index',{createOrder : result});//<--
 });
 
 /*

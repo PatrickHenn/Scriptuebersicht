@@ -11,9 +11,64 @@ block content
         input(name='name' type='text')
         label(for='price')
         //- #inputFields
-        input(name='price' type='number')
-        input.btn(type='submit' value='Submit') 
+        input(name='price' type='number' placeholder=lastName)
+        input.btn(type='submit' value='Submit' placeholder=lastPrice) 
       form(action='/api' method='get')
-        input.btn(type='submit' value='get order')
-      p Antwort:
-        pre=JSON.stringify(data, false, 2)
+        input.btn(type='submit' value='get')
+        p Antwort:
+        table(style='width:100%', border='1')
+          tr
+            th Id
+            th Name
+            th Price
+            th Empfänger
+          tr
+            th #{lastId}
+            td #{lastName}
+            td #{lastPrice}
+            td #{lastRecipient}
+          tr
+            th #{lastId}
+            td #{lastName}
+            td #{lastPrice}
+            td #{lastRecipient}
+          tr
+            th #{lastId}
+            td #{lastName}
+            td #{lastPrice}
+            td #{lastRecipient}
+          tr
+            th #{lastId}
+            td #{lastName}
+            td #{lastPrice}
+            td #{lastRecipient}
+          tr
+            th #{lastId}
+            td #{lastName}
+            td #{lastPrice}
+            td #{lastRecipient}
+          tr
+            th #{lastId}
+            td #{lastName}
+            td #{lastPrice}
+            td #{lastRecipient}
+          tr
+            th #{lastId}
+            td #{lastName}
+            td #{lastPrice}
+            td #{lastRecipient}
+          tr
+            th #{lastId}
+            td #{lastName}
+            td #{lastPrice}
+            td #{lastRecipient}
+          tr
+            th #{lastId}
+            td #{lastName}
+            td #{lastPrice}
+            td #{lastRecipient}
+          tr
+            th #{lastId}
+            td #{lastName}
+            td #{lastPrice}
+            td #{lastRecipient} 
