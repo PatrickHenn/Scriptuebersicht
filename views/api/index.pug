@@ -16,6 +16,7 @@ block content
       form(action='/api' method='get')
         input.btn(type='submit' value='get')
         p Antwort:
+          pre=JSON.stringify(obj)
         table(style='width:100%', border='1')
           tr
             th Id
@@ -24,9 +25,9 @@ block content
             th Empfänger
           tr
             th(href=`http://localhost:3000/api/`+`#{lastId}`) #{lastId} 
-            td #{lastName}
-            td #{lastPrice}
-            td #{lastRecipient}
+            td obj.lastName
+            td #obj.lastPrice
+            td #{obj}
           tr
             th #{lastId}
             td #{lastName}

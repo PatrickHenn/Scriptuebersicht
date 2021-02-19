@@ -9,8 +9,6 @@ const { split } = require('./scripts/split.js');
 const { remove } = require('./scripts/remove.js');
 const { correct } = require('./scripts/correct.js');
 
-
-
 app.use(express.static(__dirname +'/public'));
 app.use(bodyParser.urlencoded({extended: true}));
 app.set('view engine', 'pug');
@@ -79,4 +77,3 @@ console.log(req.params, req.query)
 app.listen(3000, function() {
   console.log('server ist auch da');
 });
-
