@@ -18,37 +18,20 @@ async function createOrder(test) {
 };
 
 let lastId = ''
+let obj = []
 
 async function getOrder(){
 let _get = await get('order/?orgId='+`${orgaId}`); 
-  //   _get.list.map((X) => {
-  //   const obj = {}
-  //   obj = {
-  //   lastId :X.id,
-  //   lastName :X.name,
-  //   lastPrice :X.total,
-  //   lastRecipient :'patrick.henn+code@nx-technologies.com'//_get.list[x].recipient[0].email;
-  //   };
-  // console.log('hi',obj)
-  // return obj
-  // })
-  
-lastId = _get.list.map(function(X){
-  return `${X.id}`
-});
-lastName = _get.list.map(function(X){
-  return `${X.name}`
-});
-lastPrice = _get.list.map(function(X){
-  return `${X.total}`
-});
-console.log(lastId)
-}
-
-// const obj = _get.list.filter(function(X){
-//   return X.id + X.total + X.name
-// })
-// console.log('wwwwwwwwww',obj)
-// }
+    obj = _get.list.map((X) => {
+    const data = {
+    lastId :X.id,
+    lastName :X.name,
+    lastPrice :X.total,
+    lastRecipient : X.recipient.length?X.recipient[0].email:"" // 'patrick.henn+code@nx-technologies.com'//_get.list[x].recipient[0].email;
+    };
+    return data
+  });
+  console.log('OOOOO',obj)
+};
 
 module.exports ={createOrder, getOrder}; 

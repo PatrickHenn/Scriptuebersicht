@@ -25,8 +25,7 @@ res.render('api/index',{createOrder : result});//<--
 });
 
 
-let test = 123
-router.get('/'+`${test}`, function (req, res) {
+router.get('/:id', function (req, res) {
   res.render('router/index');
 });
 
