@@ -1,15 +1,16 @@
 extends ../component/layout
 block title
     title countAmountOfEachCharacter
-
+    script(src='/scripts/add.js')
+      
 block content
   h1 countAmountOfEachCharacter
-    div(class='col-1')
+    .col
       form(method='post')
-        label(for='input') Satz-1:
-          input(id='input' name='input')
-        label(for='input') Satz-2:
-          input(id='input' name='input')
-          input(type='submit' value='Submit')     
-    p Ergebnis:
-      pre= JSON.stringify(safe)   
+        label(for='input') Sätze:
+          #inputFields
+          input(type='text' id='input' name='input' value='')
+          a.btn(href='#' id='input' onclick='add()') Add Input
+          input.btn(type='submit' value='Submit')     
+        p Ergebnis:
+          pre= JSON.stringify(obj)  

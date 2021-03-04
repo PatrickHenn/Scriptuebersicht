@@ -11,7 +11,6 @@ function split(input){
 			odd.push(input[i]);
 		}
 	}
-	console.log('odd:',odd,'even:',even);
 	return {'even':even, 'odd':odd};
 	}
 

@@ -1,17 +1,18 @@
 extends ../component/layout
 block title
     title splitOddAndEven 
-
+    script(src='/scripts/add.js')
+      
 block content
-  h1 splitOddAndEven
-    div(class='col-1')
+   h1 splitOddAndEven
+    .col
       form(method='post')
         label(for='input') Nummern:
-          input(id='input' name='input' type='number'  min='1' max='99999')
-        label(for='input')
-          input(id='input' name='input' type='number'  min='1' max='99999')
-          input(type='submit' value='Submit')     
-    p Even:
-      pre= JSON.stringify(even)    
-    p Odd:
-      pre= JSON.stringify(odd)
+          #inputFields
+          input(type='text' id='input' name='input' value='')
+          a.btn(href='#' id='input' onclick='add()') Add Input
+          input.btn(type='submit' value='Submit')      
+        p Even:
+          pre= JSON.stringify(even)    
+        p Odd:
+          pre= JSON.stringify(odd)

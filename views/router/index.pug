@@ -1,0 +1,19 @@
+extends ../component/layout
+block title
+    title route 
+      
+block content
+    .col
+      p Order:
+      table(style='width:100%', border='1')
+        tr
+          th Id
+          th Name
+          th Price
+          th Empfänger
+        tr
+          th
+            a(href=`http://localhost:3000/api/`+`#{123}`) 123
+          td obj.lastName
+          td #obj.lastPrice
+          td #{obj}

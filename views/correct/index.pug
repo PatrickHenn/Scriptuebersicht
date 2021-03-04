@@ -1,9 +1,9 @@
 extends ../component/layout
 block title
-    title removeExclamationMarksFromEnd 
+    title correctMistakes 
       
 block content
-  h1 removeExclamationMarksFromEnd
+  h1 correctMistakes
     .col
       form(method='post')
         label(for='input') Sätze:
@@ -11,4 +11,4 @@ block content
           input(type='text' id='input' name='input' value='')
           input.btn(type='submit' value='Submit') 
       p Ergebnis:
-        pre= JSON.stringify(_string)       
+        pre= JSON.stringify(_newString)       

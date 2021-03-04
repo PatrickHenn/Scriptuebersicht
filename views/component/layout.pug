@@ -2,6 +2,7 @@ doctype html
 html
   head
     link(rel='stylesheet', href='./style.css')
+    link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css' integrity='sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk' crossorigin='anonymous')
     link(rel='icon', sizes='16x16 32x32 48x48 64x64', href='./icons/logo.png')
     block title
     
@@ -9,15 +10,15 @@ html
     a(href='http://localhost:3000/')
       img(src='./icons/bezahl.deLogo.svg')
   body
-  .container
+    .container    
     block content
    
   footer
-    div(class='container')
-      span(class='bold') NX Technologies GmbH
-        div(class='container')  
+    .container
+      span.bold NX Technologies GmbH
+        .container  
       span Friesenplatz 4 | 50672 Köln
-        div(class='container')  
-      a(class='white' href='tel:+4922117738380') +49 (0)221 177383 80 | 
-      a(class='white' href='mailto:service@nx-technologies.com') service@nx-technologies.com | 
-      a(class='white' href='https://www.bezahl.de/impressum') Impressum
+        .container 
+      a.white(href='tel:+4922117738380') +49 (0)221 177383 80 | 
+      a.white(href='mailto:service@nx-technologies.com') service@nx-technologies.com | 
+      a.white(href='https://www.bezahl.de/impressum') Impressum
