@@ -16,8 +16,8 @@ async function createOrder(test) {
 
 async function getOrder(){
 let _get = await get('order/?orgId='+`${orgaId}`);
-    let obj = [];
-    obj = _get.list.map((X) => {
+    // let obj = [];
+    let obj = _get.list.map((X) => {
     const data = {
     lastId :X.id,
     lastName :X.name,
