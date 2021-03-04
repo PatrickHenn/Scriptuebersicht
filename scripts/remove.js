@@ -9,7 +9,7 @@ function remove(_string) {
   } else {
     _string = 'invalid string'
     }
-    return _string;
+  return _string;
 }
 
 module.exports = { remove };

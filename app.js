@@ -2,77 +2,35 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const bodyParser = require('body-parser');
+const pug = require('pug');
 require('dotenv').config();
-const router = require('./router');
-const { count } = require('./scripts/count.js');
-const { split } = require('./scripts/split.js');
-const { remove } = require('./scripts/remove.js');
-const { correct } = require('./scripts/correct.js');
+
 
 app.use(express.static(__dirname +'/public'));
+app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.set('view engine', 'pug');
-app.use('/api', router);
 
+const apiRoutes = require('./routes/api');
+app.use('/api', apiRoutes);
 
-app.post('/countAmountOfEachCharacter', function (req, res) {
-	const result = count(req.body.input ? req.body.input : '');
-  res.render('count/index',{obj : result});
-});
+const calculatorRoutes = require('./routes/calculator');
+app.use('/calculator', calculatorRoutes);
 
-app.post('/splitOddAndEven', function (req, res) {
-	const result = split(req.body.input ? req.body.input : '');
-  res.render('split/index',result);
-});
+const correctRouter = require('./routes/correct');
+app.use('/correctMistakes', correctRouter);
 
-app.post('/removeExclamationMarksFromEnd', function (req, res) {
-	const result = remove(req.body.input ? req.body.input : '');
-  res.render('remove/index',{_string : result});
-});
+const countRoutes = require('./routes/count');
+app.use('/countAmountOfEachCharacter', countRoutes);
 
-app.post('/correctMistakes', function (req, res) {
-	const result = correct(req.body.input ? req.body.input : '');
-  res.render('correct/index',{_newString : result});
-});
+const mainRoutes = require('./routes/main');
+app.use('/', mainRoutes);
 
+const removeRotes = require('./routes/remove');
+app.use('/removeExclamationMarksFromEnd', removeRotes);
 
-app.get('/', function (req, res) {
-  res.render('index');
-});
-
-app.get('/test', function (req, res) {
-  res.render('test');
-});
-
-app.get('/splitOddAndEven', function (req, res) {
-	const result = split(req.query.input ? req.query.input : '');
-  res.render('split/index');
-});
-
-app.get('/countAmountOfEachCharacter', function (req, res) {
-	const result = count(req.query.input ? req.query.input : '');
-  res.render('count/index');
-});
-
-app.get('/taschenrechner', function (req, res) {
-  res.render('taschenrechner/index');
-});
-
-app.get('/removeExclamationMarksFromEnd', function (req, res) {
-	const result = remove(req.query.input ? req.query.input : '');
-  res.render('remove/index');
-});
-
-app.get('/correctMistakes', function (req, res) {
-	const result = correct(req.query.input ? req.query.input : '');
-  res.render('correct/index');
-});
-
-app.get('/countAmountOfEachCharacter', function(req, res) {
-console.log(req.params, req.query)
-  res.sendFile(__dirname + "./countAmountOfEachCharacter/index");
-});
-
+const splitRoutes = require('./routes/split');
+app.use('/splitOddAndEven', splitRoutes);
 
 app.listen(3000, function() {
   console.log('server ist auch da');

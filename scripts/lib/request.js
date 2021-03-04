@@ -19,19 +19,19 @@ if (process.env.STACK === 'dev'){
   console.log('after:',{endpoint},'orgaId dev:',{orgaId},'token dev:',option.headers['NX-Token']);
 };
 
-// if (process.env.STACK === 'int'){
-//     endpoint = 'https://api.int.nx.bezahl.de/nxt/v1/';
-//     orgaId = 'TqUnGlyJc';
-//     option.headers['NX-Token'] = process.env.INT;
-//     console.log('after:',{endpoint},'token int:','orgaId int:',{orgaId},'token int:',option.headers['NX-Token']);
-// };
+if (process.env.STACK === 'int'){
+    endpoint = 'https://api.int.nx.bezahl.de/nxt/v1/';
+    orgaId = 'TqUnGlyJc';
+    option.headers['NX-Token'] = process.env.INT;
+    console.log('after:',{endpoint},'token int:','orgaId int:',{orgaId},'token int:',option.headers['NX-Token']);
+};
 
-// if (process.env.STACK === 'test'){
-//     endpoint = 'https://api.test.nx.bezahl.de/nxt/v1/';
-//     orgaId = 'TpQlrB3-F';
-//     option.headers['NX-Token'] = process.env.TEST;
-//     console.log('after:',{endpoint},'orgaId test:',{orgaId},'token test:',option.headers['NX-Token']);
-// };
+if (process.env.STACK === 'test'){
+    endpoint = 'https://api.test.nx.bezahl.de/nxt/v1/';
+    orgaId = 'TpQlrB3-F';
+    option.headers['NX-Token'] = process.env.TEST;
+    console.log('after:',{endpoint},'orgaId test:',{orgaId},'token test:',option.headers['NX-Token']);
+};
 
 
 async function get(uri){
@@ -41,7 +41,6 @@ async function get(uri){
   ...option,
   uri: `${endpoint}${uri}`,
   });
-  return body
 };
 
 async function post(uri,_body){
@@ -54,7 +53,5 @@ async function post(uri,_body){
   });
   return body
 };
-
-
 
 module.exports = {get,post,orgaId}
