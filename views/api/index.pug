@@ -6,75 +6,26 @@ block content
   h1 api orderCreate
     .col
       form(action="/api" method='post')
-        label(for='name') Name + Preis:
-        //- #inputFields
-        input(name='name' type='text' placeholder=lastName)
+        p Name + Preis:
+        label(for='name')
+          input(name='name' type='text' placeholder='Name')
         label(for='price')
-        //- #inputFields
-        input(name='price' type='number' placeholder=lastPrice)
-        input.btn(type='submit' value='Submit') 
+          input(name='price' type='number' placeholder='Price')
+          input.btn(type='submit' value='Submit') 
       form(action='/api' method='get')
-        input.btn(type='submit' value='get')
-        p Antwort:
+         input.btn(type='submit' value='get')
+      p Antwort:
           pre=JSON.stringify(result)
-        table(style='width:100%', border='1')
+      table(style='width:100%', border='1')
           tr
             th Id
             th Name
             th Price
             th Empfänger
-          //- tr
-          //-   td=obj.lastId
-          //-   td=obj.lastName
-          //-   td=obj.lastPrice
-          //-   td=obj.lastRecipient
-          //-   th
-          //-     a(href=`http://localhost:3000/api/`+'123') 123
-          //-   td obj.lastName
-          //-   td #obj.lastPrice
-          //-   td #{obj}
-          //- tr
-          //-   td= getOrder.obj.lastId
-          //-   td= getOrder.obj.lastName
-          //-   td= getOrder.obj.lastPrice
-          //- td= getOrder.obj.lastRecipient.email
-          //- tr
-          //-   th #{lastId}
-          //-   td #{lastName}
-          //-   td #{lastPrice}
-          //-   td #{lastRecipient}
-          //- tr
-          //-   th #{lastId}
-          //-   td #{lastName}
-          //-   td #{lastPrice}
-          //-   td #{lastRecipient}
-          //- tr
-          //-   th #{lastId}
-          //-   td #{lastName}
-          //-   td #{lastPrice}
-          //-   td #{lastRecipient}
-          //- tr
-          //-   th #{lastId}
-          //-   td #{lastName}
-          //-   td #{lastPrice}
-          //-   td #{lastRecipient}
-          //- tr
-          //-   th #{lastId}
-          //-   td #{lastName}
-          //-   td #{lastPrice}
-          //-   td #{lastRecipient}
-          //- tr
-          //-   th #{lastId}
-          //-   td #{lastName}
-          //-   td #{lastPrice}
-          //-   td #{lastRecipient}
-          //- tr
-          //-   th #{lastId}
-          //-   td #{lastName}
-          //-   td #{lastPrice}
-          //-   td #{lastRecipient}
-          //- tr
-          //-   th #{lastId}
-          //-   td #{lastName}
-          //-   td #{lastPrice}
-          //-   td #{lastRecipient} 
+            - for (var i = 0; i < 10; ++i) {
+          tr
+            td=getOrder[i].lastId
+            td=getOrder[i].lastName
+            td=getOrder[i].lastPrice
+            td=getOrder[i].lastRecipient
+            -}
