@@ -3,7 +3,7 @@ const app = express();
 const path = require('path');
 const bodyParser = require('body-parser');
 require('dotenv').config();
-const router = require('./router');
+const apiroutes = require('./routes/api');
 const { count } = require('./scripts/count.js');
 const { split } = require('./scripts/split.js');
 const { remove } = require('./scripts/remove.js');
@@ -12,7 +12,7 @@ const { correct } = require('./scripts/correct.js');
 app.use(express.static(__dirname +'/public'));
 app.use(bodyParser.urlencoded({extended: true}));
 app.set('view engine', 'pug');
-app.use('/api', router);
+app.use('/api', apiroutes);
 
 
 app.post('/countAmountOfEachCharacter', function (req, res) {

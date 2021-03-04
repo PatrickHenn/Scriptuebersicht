@@ -1,16 +1,8 @@
-require('dotenv').config();
 const express = require('express');
 const router = express.Router();
-const bodyParser = require('body-parser');
-const app = express()//<--
-const { createOrder } = require('./scripts/createOrder.js');
-const { getOrder } = require('./scripts/createOrder.js');  
-const { orgaId } = require('./scripts/lib/request.js');
-
-router.use(express.static(__dirname +'/public'));
-router.use(bodyParser.urlencoded({extended: true}));
-app.set('view engine', 'pug');//<--
-
+const { createOrder } = require('../scripts/createOrder.js');
+const { getOrder } = require('../scripts/createOrder.js');  
+const { orgaId } = require('../scripts/lib/request.js');
 
 router.get('/',async function (req, res) {
   console.log(req.body,'query:',req.query);
@@ -23,7 +15,6 @@ console.log(req.body);
   const result = await createOrder(req.body ? req.body : '');
 res.render('api/index',{createOrder : result});//<--
 });
-
 
 router.get('/:id', function (req, res) {
   res.render('router/index');
