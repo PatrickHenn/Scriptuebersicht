@@ -1,6 +1,7 @@
 const express = require('express');
+const { remove } = require('../scripts/remove.js');
+
 const removeRotes = express.Router();
-const { remove } = require('./../scripts/remove.js');
 
 removeRotes.get('/', function (req, res) {
     const result = remove(req.query.input ? req.query.input : '');
