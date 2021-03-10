@@ -1,0 +1,10 @@
+STACK=dev
+//1. NX-Token
+DEV=
+TEST=
+INT=
+//2. orgaId
+ODEV=
+OINT=
+OTEST=
+//ausfüllen und auf env umbenennen
