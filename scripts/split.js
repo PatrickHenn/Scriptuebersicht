@@ -2,8 +2,7 @@
 function split(input) {
   const even = [];
   const odd = [];
-  // eslint-disable-next-line no-plusplus
-  for (let i = 0; i < input.length; i++) {
+  for (let i = 0; i < input.length; i += 1) {
     if (input[i] % 2 === 0) {
       even.push(input[i]);
     } else {

@@ -1,15 +1,16 @@
 // Entfernt Ausrufezeichen - removeExclamationMarksFromEnd
 
-function remove(_string) {
+function remove(input) {
   const range = /^[aA-zZ!"§$%&/()=?!*#+.,:;-_<> ]*$/gm;
-  if (_string.match(range)) {
-    while (_string[_string.length - 1] === '!') {
-      _string = _string.slice(0, -1);
+  let tmp = input;
+  if (tmp.match(range)) {
+    while (tmp[tmp.length - 1] === '!') {
+      tmp = tmp.slice(0, -1);
     }
   } else {
-    _string = 'invalid string';
+    tmp = 'invalid string';
   }
-  return _string;
+  return tmp;
 }
 
 module.exports = { remove };

@@ -1,107 +1,96 @@
-//calculator
-let input = 0;
+// calculator
+// let input = 0;
 let tmp = 0;
 let save = 0;
-let sign ='';
+let sign = '';
 
 function number(x) {
-	const input = document.getElementById("anzeige").value;
-		 console.log({sign,save,tmp,input})
-	if(input === '0'){
-	return document.getElementById("anzeige").value = x; 
-	}	
-   document.getElementById("anzeige").value += x;
+  const input = document.getElementById('anzeige').value;
+  if (input === '0') {
+    document.getElementById('anzeige').value = x;
+    return x;
+  }
+  document.getElementById('anzeige').value += x;
 }
 
-function operation(o){
-	 const input = document.getElementById("anzeige").value;
-	 console.log({sign,o,save,tmp,input})
-	 if (o === '+'){
-	   document.getElementById("anzeige").value = '0';
-	     if (sign !== ''){
-	       tmp = parseFloat(tmp) + parseFloat(input);
-	     } else {
-	       tmp = parseFloat(input);
-	     }
-	save = tmp;
-	sign = o;
-	console.log({sign,o,save,tmp,input})
-	}
-	
-	console.log({sign,o,save,tmp,input})
-	 if (o === '-'){
-	   document.getElementById("anzeige").value = '0';
-	     if (sign !== ''){
-	       tmp = parseFloat(tmp) - parseFloat(input);
-	     } else {
-	       tmp = parseFloat(input);
-	     }
-	save = tmp;
-	sign = o;
-	console.log({sign,o,save,tmp,input})
-	}
-	console.log({sign,o,save,tmp,input})
-	 if (o === '*'){
-	   document.getElementById("anzeige").value = '0';
-	     if (sign !== ''){
-	       tmp = parseFloat(tmp) * parseFloat(input);
-	     } else {
-	       tmp = parseFloat(input);
-	     }
-	save = tmp;
-	sign = o;
-	console.log({sign,o,save,tmp,input})
-	}
-	console.log({sign,o,save,tmp,input})
-	 if (o === '/'){
-	   document.getElementById("anzeige").value = '0';
-	     if (sign !== ''){
-	       tmp = parseFloat(tmp) / parseFloat(input);
-	     } else {
-	       tmp = parseFloat(input);
-	     }
-	save = tmp;
-	sign = o;
-	console.log({sign,o,save,tmp,input})
-	}
-	 if (o === '='){
-	 console.log({sign,o,save,tmp,input})
-	 document.getElementById("anzeige").value = operation(sign);
-	 document.getElementById("anzeige").value = save;
-	 sign ='';
-	 }
-	 
-	if (o ==='ce'){ 
-	document.getElementById("anzeige").value = '0';
-	let input = 0;
-	let tmp = 0;
-	let save = 0;
-	let sign ='';
-	console.log({sign,save,tmp,input})
-	}
+function operation(o) {
+  let input = document.getElementById('anzeige').value;
+  if (o === '+') {
+    document.getElementById('anzeige').value = '0';
+    if (sign !== '') {
+      tmp = parseFloat(tmp) + parseFloat(input);
+    } else {
+      tmp = parseFloat(input);
+    }
+    save = tmp;
+    sign = o;
+  }
+
+  if (o === '-') {
+    document.getElementById('anzeige').value = '0';
+    if (sign !== '') {
+      tmp = parseFloat(tmp) - parseFloat(input);
+    } else {
+      tmp = parseFloat(input);
+    }
+    save = tmp;
+    sign = o;
+  }
+  if (o === '*') {
+    document.getElementById('anzeige').value = '0';
+    if (sign !== '') {
+      tmp = parseFloat(tmp) * parseFloat(input);
+    } else {
+      tmp = parseFloat(input);
+    }
+    save = tmp;
+    sign = o;
+  }
+  if (o === '/') {
+    document.getElementById('anzeige').value = '0';
+    if (sign !== '') {
+      tmp = parseFloat(tmp) / parseFloat(input);
+    } else {
+      tmp = parseFloat(input);
+    }
+    save = tmp;
+    sign = o;
+  }
+  if (o === '=') {
+    document.getElementById('anzeige').value = operation(sign);
+    document.getElementById('anzeige').value = save;
+    sign = '';
+  }
+
+  if (o === 'ce') {
+    document.getElementById('anzeige').value = '0';
+    input = 0;
+    tmp = 0;
+    save = 0;
+    sign = '';
+  }
 }
 
-function operationc(){
-	let lang = document.getElementById("anzeige").value;
-	if (lang !== 0){
-	let neulang = lang.substring(0, lang.length - 1);
-	document.getElementById("anzeige").value = neulang; 
-	console.log(neulang);
-	}
+function operationc() {
+  const lang = document.getElementById('anzeige').value;
+  if (lang !== 0) {
+    const neulang = lang.substring(0, lang.length - 1);
+    document.getElementById('anzeige').value = neulang;
+  }
 }
 
-function operationpro(value){
-	let pro = document.getElementById("anzeige").value;
-	document.getElementById("anzeige").value = pro / 100;
+function operationpro(value) {
+  const pro = document.getElementById('anzeige').value;
+  document.getElementById('anzeige').value = pro / 100;
 }
 
-function calculator(){
-	let z = document.getElementById("anzeige").value;
-	document.getElementById("anzeige").value = z * z;
+function calculator() {
+  const z = document.getElementById('anzeige').value;
+  document.getElementById('anzeige').value = z * z;
 }
-function calculator(x){console.log('hey');
-}
-module.exports ={
-		calculator
-		 };
-//nicht als erstes --- 0. geht nicht
+
+module.exports = {
+  calculator, operationpro, operationc, operation, number,
+};
+
+// nicht als erstes --- 0.
