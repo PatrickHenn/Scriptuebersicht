@@ -8,7 +8,7 @@ function number(x) {
   const input = document.getElementById('anzeige').value;
   if (input === '0') {
     document.getElementById('anzeige').value = x;
-    return x;
+    return;
   }
   document.getElementById('anzeige').value += x;
 }
@@ -79,18 +79,18 @@ function operationc() {
   }
 }
 
-function operationpro(value) {
+function operationpro() {
   const pro = document.getElementById('anzeige').value;
   document.getElementById('anzeige').value = pro / 100;
 }
 
-function calculator() {
+function operationhoch() {
   const z = document.getElementById('anzeige').value;
   document.getElementById('anzeige').value = z * z;
 }
 
 module.exports = {
-  calculator, operationpro, operationc, operation, number,
+  operationhoch, operationpro, operationc, operation, number,
 };
 
 // nicht als erstes --- 0.
