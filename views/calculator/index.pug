@@ -1,14 +1,9 @@
-doctype html
-html
-  header
-    link(rel='stylesheet', href='./style.css')
-    link(rel='icon', sizes='16x16 32x32 48x48 64x64', href='./icons/logo.png')
-  
-    a(href='http://localhost:3000/')
-      img(src='./icons/bezahl.deLogo.svg')
-    script(src='/scripts/calculator.js')
-    title calculator
+extends ../component/layout
+block title
+  script(src='/scripts/calculator.js')
+  title calculator
 
+block content
     input(id='anzeige' type='text' disabled)
     #tastatur
       button.button1(onclick='operation(value)' value='ce') CE
