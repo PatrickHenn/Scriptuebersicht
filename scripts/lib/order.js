@@ -1,16 +1,28 @@
+/* eslint-disable no-console */
+/* eslint-disable func-names */
 /* eslint-disable no-unused-vars */
 require('dotenv').config();
 const { post, get, orgaId } = require('./request.js');
 
 const orderId = 'doffmPY05';
 
-(async function () {
+async function changeOrder(test) {
   const createOrder = await post('order/',
     {
       orgId: `${orgaId}`,
-      name: 'test lol code',
-      price: 209555,
+      name: test.name,
+      price: test.price,
+      recipient: 'patrick.henn+test@nx-technologies.com',
     });
+
+  const updateContactperson = await post(`order/${orderId}/update/contactperson`,
+    {
+      contactperson: 'patrick.henn+updatecontactperson@nx-technologies.com',
+      orgId: `${orgaId}`,
+    });
+  console.log('updateContactperson', updateContactperson);
+  return updateContactperson;
+  /*
   const recipient = await post(`order/${orderId}/recipient`,
     {
       recipient:
@@ -24,7 +36,6 @@ const orderId = 'doffmPY05';
       email: 'patrick.henn+codingRecipient@nx-technologies.com',
     });
 
-  /*
   let updatePrice = await post(`order/${orderId}/update/price`,
   {
       "price": 87654,
@@ -38,19 +49,13 @@ const orderId = 'doffmPY05';
   console.log('updatePrice',updatePrice);
   */
 
-  const updateName = await post(`order/${orderId}/update/name`,
-    {
-      name: 'änderung coding test',
-    });
-  console.log('updateName', updateName);
+  // const updateName = await post(`order/${orderId}/update/name`,
+  //   {
+  //     name: 'änderung coding test',
+  //   });
+  // console.log('updateName', updateName);
 
-  const updateContactperson = await post(`order/${orderId}/update/contactperson`,
-    {
-      contactperson: 'patrick.henn+updatecontactperson@nx-technologies.com',
-      orgId: `${orgaId}`,
-    });
-  console.log('updateContactperson', updateContactperson);
-
+  /*
   const updateDuedate = await post(`order/${orderId}/update/duedate`,
     {
       duedate: '2021-08-24',
@@ -247,12 +252,10 @@ let zahlungsplan = await post('order/plan',
     }
 )
 console.log('zahlungsplan',zahlungsplan);
-*/
 
   const allOrders = await get(`order?orgId=${orgaId}`);
   console.log('allOrders', allOrders);
 
-  /*
   let oneOrder = await get(`order/${orgaId}`)
   console.log('oneOrder',oneOrder);
 
@@ -262,7 +265,8 @@ console.log('zahlungsplan',zahlungsplan);
   let offline = await get(`order/${orderId}/offline`,{qs:{link:true}})
   console.log('offline',offline);
   */
-}());
+  module.exports = { updateContactperson };
+}
 // .catch(err=> console.log('---------ERROR---------',err));
 
 /*
@@ -278,3 +282,4 @@ console.log('zahlungsplan',zahlungsplan);
   console.log('closeOrder',closeOrder);
 
 */
+module.exports = { changeOrder};

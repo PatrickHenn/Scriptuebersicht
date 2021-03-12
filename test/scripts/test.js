@@ -3,14 +3,7 @@
 const assert = require('assert');
 // const { getOrder } = require('../../scripts/createOrder');
 const { createOrder } = require('../../scripts/createOrder');
-
-(async () => {
-  const updateName = await post(`order/${orderId}/update/name`,
-    {
-      name: 'änderung coding test',
-    });
-  console.log('updateName', updateName);
-})();
+const { changeOrder, updateContactperson } = require('../../scripts/lib/order');
 
 describe('createOrder', () => {
   it('createOrder should create a order', async () => {
@@ -18,16 +11,16 @@ describe('createOrder', () => {
     assert.equal(test, '{"orgId":"Hgza28rQ-","name":"test","price":"2999","recipient":"patrick.henn+test@nx-technologies.com"}');
     await console.log('TEST', createOrder);
   });
-  it('createOrder should create a order', async () => {
+  it('createOrder = string', async () => {
     const test = await createOrder({ name: 'test', price: '2999' });
     assert.equal(typeof test, 'string');
   });
 });
 
-describe('updateName', () => {
-  it('updateName change the name', async () => {
-    const test = await updateName({ name: 'TEST' });
-    assert.equal(test, '{"orgId":"Hgza28rQ-","name":"TEST","price":"2999","recipient":"patrick.henn+test@nx-technologies.com"}');
-    await console.log('TEST', createOrder);
+describe('updateContactperson', () => {
+  it('updateContactperson changes the Contactperson', async () => {
+    const test1 = await changeOrder({ name: 'TEST' });
+    console.log('TEST1', test1);
+    assert.equal(test1, '{"contactperson":"patrick.henn+updatecontactperson@nx-technologies.com","orgId":"Hgza28rQ-"}');
   });
 });
