@@ -21,7 +21,13 @@ async function changeOrder(test) {
       orgId: `${orgaId}`,
     });
   console.log('updateContactperson', updateContactperson);
-  return updateContactperson;
+
+  const updateName = await post(`order/${orderId}/update/name`,
+    {
+      name: 'änderung coding test',
+    });
+  console.log('updateName', updateName);
+  return { updateContactperson, updateName };
   /*
   const recipient = await post(`order/${orderId}/recipient`,
     {
@@ -46,16 +52,7 @@ async function changeOrder(test) {
         }
       ]
     })
-  console.log('updatePrice',updatePrice);
-  */
 
-  // const updateName = await post(`order/${orderId}/update/name`,
-  //   {
-  //     name: 'änderung coding test',
-  //   });
-  // console.log('updateName', updateName);
-
-  /*
   const updateDuedate = await post(`order/${orderId}/update/duedate`,
     {
       duedate: '2021-08-24',
@@ -265,7 +262,6 @@ console.log('zahlungsplan',zahlungsplan);
   let offline = await get(`order/${orderId}/offline`,{qs:{link:true}})
   console.log('offline',offline);
   */
-  module.exports = { updateContactperson };
 }
 // .catch(err=> console.log('---------ERROR---------',err));
 
@@ -282,4 +278,4 @@ console.log('zahlungsplan',zahlungsplan);
   console.log('closeOrder',closeOrder);
 
 */
-module.exports = { changeOrder};
+module.exports = { changeOrder };
