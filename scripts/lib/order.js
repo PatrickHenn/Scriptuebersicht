@@ -27,8 +27,7 @@ async function changeOrder(test) {
       name: 'änderung coding test',
     });
   console.log('updateName', updateName);
-  return { updateContactperson, updateName };
-  /*
+
   const recipient = await post(`order/${orderId}/recipient`,
     {
       recipient:
@@ -42,17 +41,20 @@ async function changeOrder(test) {
       email: 'patrick.henn+codingRecipient@nx-technologies.com',
     });
 
-  let updatePrice = await post(`order/${orderId}/update/price`,
-  {
-      "price": 87654,
-      "assets": [
+  const updatePrice = await post(`order/${orderId}/update/price`,
+    {
+      price: 87654,
+      assets: [
         {
-          "label": "string",
-          "amount": 0
-        }
-      ]
-    })
-
+          label: 'string',
+          amount: 0,
+        },
+      ],
+    });
+  return {
+    updateContactperson, updateName, recipient, updatePrice,
+  };
+/*
   const updateDuedate = await post(`order/${orderId}/update/duedate`,
     {
       duedate: '2021-08-24',
@@ -78,204 +80,201 @@ async function changeOrder(test) {
     });
   console.log('deletePickupdate', deletePickupdate);
 
-  /*
-  let updateMetafields = await post(`order/${orderId}/update/metafields/`,
-  {
-      "metafields": [
+  const updateMetafields = await post(`order/${orderId}/update/metafields/`,
+    {
+      metafields: [
         {
-          "type": "string",
-          "desc": "string"
-        }
+          type: 'string',
+          desc: 'string',
+        },
       ],
-      "override": false
-    })
-  console.log('updateMetafields',updateMetafields);
+      override: false,
+    });
+  console.log('updateMetafields', updateMetafields);
 
-let entwurf = await post('order',
-{
-    "orgId": `${orgaId}`,
-    "name": "Entwurf über Code",
-    "attachment": "",
-    "draft": true,
-    "assets": [
+  const entwurf = await post('order',
+    {
+      orgId: `${orgaId}`,
+      name: 'Entwurf über Code',
+      attachment: '',
+      draft: true,
+      assets: [
         {
-            "label": "Kaufpreis",
-            "amount": 900000
+          label: 'Kaufpreis',
+          amount: 900000,
         },
         {
-            "label": "Sportreifen, MB",
-            "amount": 0
-        }
-    ],
-    "payments": [
+          label: 'Sportreifen, MB',
+          amount: 0,
+        },
+      ],
+      payments: [
         {
-            "label": "Inzahlungnahme",
-            "amount": 200000,
-            "confirmed": false,
-            "received": true
+          label: 'Inzahlungnahme',
+          amount: 200000,
+          confirmed: false,
+          received: true,
         },
         {
-            "label": "Finanzierung",
-            "amount": 49999,
-            "confirmed": true,
-            "received": true
-        }
-    ],
-    "paymentoptions": {
-        "fts": true
-    },
-    "reminder": "7d",
-    "pickupdate": "2021-02-20",
-    "duedate": "2021-10-30",
-    "pickupWithoutPayment": true,
-    "recipient": "patrick.henn+1@nx-technologies.com",
-    "contactperson": "patrick.henn@nx-technologies.com",
-    "header": {
-        "url": "www.bezahl.de",
-        "description": "Back to Shop (draft)"
-    },
-    "metafields": [
-        {
-            "type": "Farbe",
-            "desc": "Schwarz"
+          label: 'Finanzierung',
+          amount: 49999,
+          confirmed: true,
+          received: true,
         },
-        {
-            "type": "FIN",
-            "desc": "WAUZZZFFS666766129"
-        }
-    ],
-    "customer": {
-        "id": "i38iKq",
-        "company": "",
-        "firstname": "Marlin",
-        "lastname": "Freeze",
-        "street": "Freiheisstraße",
-        "streetnumber": "60",
-        "zip": "51001",
-        "city": "Köln",
-        "country": "Deutschland",
-        "email": "siegfried.obenauer+12@nx-technologies.com",
-        "phone": "0221/2957427"
-    },
-    "tags": [
-        "Rechnungskunde",
-        "Neuwagen",
-        "Service"
-    ],
-    "invoice": [
-        {
-            "desc": "Inlandsrechnung",
-            "invoiceNo": "2020-30",
-            "debitor": "Marlin Freeze",
-            "name": "Marlin Freeze",
-            "amount": 100000,
-            "duedate": "2020-10-15"
-        },
-        {
-            "desc": "Auslandsrechnung",
-            "invoiceNo": "2020-16",
-            "debitor": "67890",
-            "name": "Gerard A. Way",
-            "amount": 0,
-            "duedate": "2020-08-24"
-        }
-    ]
-});
-console.log('entwurf',entwurf);
-
-let zahlungsplan = await post('order/plan',
-{
-    "orgId": `${orgaId}`,
-    "order": {
-      "name": "Coding test",
-      "price": 40400,
-      "pickupdate": "2021-01-23",
-      "contactperson": "patrick.henn+code@nx-technologies.com",
-      "recipient": "patrick.henn+code@nx-technologies.com",
-      "reminder": "disabled",
-      "paymentoptions": {
-
-        "cash": false,
-        "sepa": false,
-        "fts": true },
-        "metafields": [
-          {
-            "type": "string",
-            "desc": "Test"
-          }
-        ],
-        "customer": {
-          "id": "string",
-          "company": "CarRent",
-          "firstname": "Max",
-          "lastname": "Reiner",
-          "street": "Am Rosenberg",
-          "streetnumber": "41",
-          "zip": "51101",
-          "city": "Köln",
-          "country": "Deutschland",
-          "email": "example@mail.com",
-          "phone": "0123 1234567"
-        },
-        "invoice": [
-          {
-            "desc": "string",
-            "invoice": "dev_test",
-            "debitor": "Herr Lang",
-            "name": "string",
-            "amount": 20000,
-            "duedate": "2021-01-25"
-          }
-        ],
-        "draft": false,
-        "tags": [
-          "string"
-        ]
+      ],
+      paymentoptions: {
+        fts: true,
       },
-      "assets": [
+      reminder: '7d',
+      pickupdate: '2021-02-20',
+      duedate: '2021-10-30',
+      pickupWithoutPayment: true,
+      recipient: 'patrick.henn+1@nx-technologies.com',
+      contactperson: 'patrick.henn@nx-technologies.com',
+      header: {
+        url: 'www.bezahl.de',
+        description: 'Back to Shop (draft)',
+      },
+      metafields: [
         {
-          "label": "Zusatz",
-          "amount": 100000
-        }
+          type: 'Farbe',
+          desc: 'Schwarz',
+        },
+        {
+          type: 'FIN',
+          desc: 'WAUZZZFFS666766129',
+        },
       ],
-      "payments": [
+      customer: {
+        id: 'i38iKq',
+        company: '',
+        firstname: 'Marlin',
+        lastname: 'Freeze',
+        street: 'Freiheisstraße',
+        streetnumber: '60',
+        zip: '51001',
+        city: 'Köln',
+        country: 'Deutschland',
+        email: 'siegfried.obenauer+12@nx-technologies.com',
+        phone: '0221/2957427',
+      },
+      tags: [
+        'Rechnungskunde',
+        'Neuwagen',
+        'Service',
+      ],
+      invoice: [
         {
-          "label": "Vorzahlung",
-          "amount": 200000,
-          "confirmed": true,
-          "received": true
-        }
-      ]
-    }
-)
-console.log('zahlungsplan',zahlungsplan);
+          desc: 'Inlandsrechnung',
+          invoiceNo: '2020-30',
+          debitor: 'Marlin Freeze',
+          name: 'Marlin Freeze',
+          amount: 100000,
+          duedate: '2020-10-15',
+        },
+        {
+          desc: 'Auslandsrechnung',
+          invoiceNo: '2020-16',
+          debitor: '67890',
+          name: 'Gerard A. Way',
+          amount: 0,
+          duedate: '2020-08-24',
+        },
+      ],
+    });
+  console.log('entwurf', entwurf);
+
+  const zahlungsplan = await post('order/plan',
+    {
+      orgId: `${orgaId}`,
+      order: {
+        name: 'Coding test',
+        price: 40400,
+        pickupdate: '2021-01-23',
+        contactperson: 'patrick.henn+code@nx-technologies.com',
+        recipient: 'patrick.henn+code@nx-technologies.com',
+        reminder: 'disabled',
+        paymentoptions: {
+
+          cash: false,
+          sepa: false,
+          fts: true,
+        },
+        metafields: [
+          {
+            type: 'string',
+            desc: 'Test',
+          },
+        ],
+        customer: {
+          id: 'string',
+          company: 'CarRent',
+          firstname: 'Max',
+          lastname: 'Reiner',
+          street: 'Am Rosenberg',
+          streetnumber: '41',
+          zip: '51101',
+          city: 'Köln',
+          country: 'Deutschland',
+          email: 'example@mail.com',
+          phone: '0123 1234567',
+        },
+        invoice: [
+          {
+            desc: 'string',
+            invoice: 'dev_test',
+            debitor: 'Herr Lang',
+            name: 'string',
+            amount: 20000,
+            duedate: '2021-01-25',
+          },
+        ],
+        draft: false,
+        tags: [
+          'string',
+        ],
+      },
+      assets: [
+        {
+          label: 'Zusatz',
+          amount: 100000,
+        },
+      ],
+      payments: [
+        {
+          label: 'Vorzahlung',
+          amount: 200000,
+          confirmed: true,
+          received: true,
+        },
+      ],
+    });
+  console.log('zahlungsplan', zahlungsplan);
 
   const allOrders = await get(`order?orgId=${orgaId}`);
   console.log('allOrders', allOrders);
 
-  let oneOrder = await get(`order/${orgaId}`)
-  console.log('oneOrder',oneOrder);
+  const oneOrder = await get(`order/${orgaId}`);
+  console.log('oneOrder', oneOrder);
 
-  let _offline = await get(`order/${orderId}/offline?link=true`)
-  console.log('_offline',_offline);
+  const offline1 = await get(`order/${orderId}/offline?link=true`);
+  console.log('offline1', offline1);
 
-  let offline = await get(`order/${orderId}/offline`,{qs:{link:true}})
-  console.log('offline',offline);
-  */
+  const offline = await get(`order/${orderId}/offline`, { qs: { link: true } });
+  console.log('offline', offline);
 }
 // .catch(err=> console.log('---------ERROR---------',err));
 
-/*
-//upload attachment
-//post(`order/${orderId}/attachment`,
+// upload attachment
+// post(`order/${orderId}/attachment`,
 
-//)(console.log);
+// )(console.log);
 
-  let closeOrder = await post(`order/${orderId}/hide`,
-  {
-      "closed": true
-    })
-  console.log('closeOrder',closeOrder);
-
+// let closeOrder = await post(`order/${orderId}/hide`,
+// {
+//     "closed": true
+//   })
+// console.log('closeOrder',closeOrder);
 */
+}
 module.exports = { changeOrder };

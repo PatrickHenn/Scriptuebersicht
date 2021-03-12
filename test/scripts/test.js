@@ -25,4 +25,9 @@ describe('updateContactperson', () => {
     const test4 = await changeOrder({ name: 'TEST' });
     assert.equal(test4.updateName, '{"name":"änderung coding test"}');
   });
+  it('add recipient + updatePrice', async () => {
+    const test5 = await changeOrder({ name: 'TEST' });
+    assert.equal(test5.recipient, '{"recipient":{"email":"patrick.henn+codingRecipient@nx-technologies.com"}}');
+    assert.equal(test5.updatePrice, '{"price":87654,"assets":[{"label":"string","amount":0}]}');
+  });
 });
