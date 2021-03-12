@@ -8,11 +8,10 @@ async function createOrder(test) {
       orgId: `${orgaId}`,
       name: test.name,
       price: test.price,
-      recipient: 'patrick.henn+res@nx-technologies.com',
+      recipient: 'patrick.henn+test@nx-technologies.com',
     });
   return create;
 }
-
 async function getOrder() {
   const order = await get(`order/?orgId=${orgaId}`);
   const obj = order.list.map((X) => {
