@@ -44,7 +44,7 @@ async function get(uri) {
 
 async function post(uri, _body) {
   // console.log('post',uri,_body);
-  const { body } = request({
+  const body = await request({
     method: 'POST',
     ...option,
     uri: `${endpoint}${uri}`,

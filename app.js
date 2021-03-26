@@ -37,4 +37,4 @@ const splitRoutes = require('./routes/split');
 
 app.use('/splitOddAndEven', splitRoutes);
 
-app.listen(3000);
+app.listen(4000);

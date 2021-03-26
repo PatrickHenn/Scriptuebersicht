@@ -52,7 +52,7 @@ async function changeOrder(test) {
       ],
     });
   return {
-    updateContactperson, updateName, recipient, updatePrice,
+    updateContactperson, updateName, recipient, updatePrice, createOrder,
   };
 /*
   const updateDuedate = await post(`order/${orderId}/update/duedate`,
