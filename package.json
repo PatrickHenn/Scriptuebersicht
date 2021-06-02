@@ -17,7 +17,8 @@
     "nodemon": "^2.0.7",
     "pug": "^3.0.2",
     "request": "^2.88.2",
-    "request-promise-native": "^1.0.9"
+    "request-promise-native": "^1.0.9",
+    "vue": "^2.6.13"
   },
   "devDependencies": {
     "eslint": "^7.21.0",

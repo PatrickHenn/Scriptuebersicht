@@ -25,7 +25,7 @@ const countRoutes = require('./routes/count');
 
 app.use('/countAmountOfEachCharacter', countRoutes);
 
-const mainRoutes = require('./routes/main');
+const mainRoutes = require('./routes/main.js');
 
 app.use('/', mainRoutes);
 
@@ -37,4 +37,12 @@ const splitRoutes = require('./routes/split');
 
 app.use('/splitOddAndEven', splitRoutes);
 
-app.listen(4000);
+const fun = require('./routes/fun');
+
+app.use('/fun', fun);
+
+const puppies = require('./routes/puppies');
+
+app.use('/puppies', puppies);
+
+app.listen(3000);
