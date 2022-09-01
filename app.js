@@ -41,11 +41,8 @@ const fun = require('./routes/fun');
 
 app.use('/fun', fun);
 
-<<<<<<< HEAD
 const puppies = require('./routes/puppies');
 
 app.use('/puppies', puppies);
 
-=======
->>>>>>> e7acfe2ebf4bc94966061734c40896aee7e1e31f
 app.listen(3000);
